@@ -1,0 +1,110 @@
+/* Variables CSS pour le mode sombre */
+:root {
+    --color-bg: #121212;
+    --color-text: #e0e0e0;
+    --color-primary: #3498db;
+    --color-accent: #ff9900;
+    --color-secondary: #bb86fc;
+    --color-card-bg: #1e1e1e;
+    --color-link: #bb86fc;
+    --color-border: #333;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-link);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.nav-link {
+    color: var(--color-text);
+}
+
+.nav-link:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Adapter les listes de compétences et projets */
+.list-group-item {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+/* Survol et focus des listes de compétences et projets */
+.list-group-item:hover,
+.list-group-item:focus {
+    background-color: #2a2a2a; /* Fond sombre */
+    color: var(--color-text); /* Texte clair */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-border);
+}
+
+/* Survol des icônes et du texte dans les listes */
+.list-group-item i:hover,
+.list-group-item span:hover {
+    color: var(--color-accent); /* Couleur orange */
+}
+
+/* Harmoniser les cartes "flip" */
+.flip-card-front-style {
+    background-color: var(--color-card-bg);
+    border: 2px solid var(--color-border);
+}
+
+.flip-card-back-style {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* Assombrir les champs de formulaire */
+input,
+textarea,
+select {
+    background-color: #1e1e1e;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaaaaa;
+}
+
+/* Assombrir le pied de page */
+footer {
+    background-color: #1a1a1a;
+    color: var(--color-text);
+}
+
+/* Adapter les boutons .btn-primary */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Adapter les messages d’erreur / alertes */
+.alert {
+    background-color: #2a2a2a;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}

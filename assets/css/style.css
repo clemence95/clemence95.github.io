@@ -1,0 +1,290 @@
+/* Importation de la police Roboto avec font-display: swap */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Variables CSS pour centraliser les couleurs */
+:root {
+    --color-bg: #f4f4f4;
+    --color-text: #333;
+    --color-primary: #3498db;
+    --color-accent: #ff9900;
+    --color-secondary: #800080;
+    --color-card-bg: #ffffff;
+    --color-link: #3498db;
+    --color-border: #dee2e6;
+}
+
+/* === GLOBAL === */
+/* Utilise les variables Bootstrap pour la couleur et le fond, police personnalisée */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+/* Transitions fluides pour les changements de thème et d'état */
+body,
+.card,
+.list-group-item,
+input,
+textarea,
+.btn,
+footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* === ANIMATIONS === */
+/* Animations d'apparition et de zoom */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+.fade-quote { animation: fadeIn 0.5s ease-in-out; }
+.fade-in-up, .fade-in { animation: fadeInUp 0.5s ease forwards; }
+
+/* === IMAGES === */
+/* Animation et effet hover sur la photo de profil */
+img.animate-photo {
+    animation: fadeIn 1.5s ease-in-out;
+}
+.profile-photo,
+figure img {
+    border-radius: 50%;
+    border: 5px solid var(--bs-primary, #3498db);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.profile-photo:hover,
+figure img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* === SECTIONS === */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    animation: fadeIn 0.6s ease-in-out both;
+}
+
+/* === CARDS === */
+/* Utilise la couleur de fond Bootstrap pour les cartes */
+.card {
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color, #dee2e6);
+}
+.card:hover {
+    transform: perspective(600px) rotateX(2deg) rotateY(1deg);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* === TIMELINE === */
+/* Styles personnalisés pour la timeline */
+.timeline {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    width: 2px;
+    background-color: var(--bs-primary, #3498db);
+}
+.timeline li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+.timeline li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+    color: var(--bs-primary, #3498db);
+}
+
+/* === FLIP CARDS === */
+/* Styles personnalisés pour les flip cards */
+.flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+    margin: 1rem auto;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.flip-card-front-style {
+    background-color: var(--bs-body-bg);
+    border: 2px solid var(--bs-border-color, #dee2e6);
+    font-size: 2rem;
+}
+.flip-card-back-style {
+    background-color: var(--bs-primary, #007bff);
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* === LISTES & COMPÉTENCES === */
+/* Effets de survol et d'interactivité sur les listes de compétences */
+.list-group-item {
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    border: none;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+.list-group-item:hover,
+.list-group-item:focus {
+    background-color: var(--bs-secondary-bg, #f8f9fa);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.list-group-item i,
+.list-group-item span {
+    transition: transform 0.3s, color 0.3s;
+}
+.list-group-item i:hover,
+.list-group-item span:hover {
+    color: var(--bs-warning, #ff9900);
+    transform: scale(1.2);
+}
+.list-group-item i:hover {
+    transform: scale(1.3) rotate(15deg);
+}
+
+/* === BOUTONS === */
+/* Effet personnalisé pour le bouton de bascule du thème */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bs-primary, #3498db);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.theme-toggle-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+.filter-btn.active {
+    color: #fff !important;
+}
+
+/* === ICÔNES & COULEURS SPÉCIALES === */
+/* Couleurs personnalisées pour certains éléments */
+.fab.fa-github { color: var(--color-secondary, #800080) !important; }
+h3.text-muted.h5 { color: var(--color-secondary, #800080) !important; }
+blockquote p, blockquote footer { color: var(--color-secondary, #800080) !important; }
+
+/* === UTILITAIRES & ALIGNEMENT === */
+.center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.mb-20 { margin-bottom: 20px; }
+.mt-4 { margin-top: 1.5rem; }
+.shadow { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.rounded { border-radius: 0.5rem; }
+.text-center { text-align: center; }
+
+/* === RÉSEAUX SOCIAUX === */
+.mt-4 a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+.mt-4 a i {
+    transition: transform 0.3s, color 0.3s;
+}
+.mt-4 a i:hover {
+    transform: scale(1.2);
+    color: var(--bs-warning, #ff9900);
+}
+
+/* === FORMULAIRE === */
+.hidden-honey {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+.text-danger {
+    /* Utilise la classe Bootstrap .text-danger pour la couleur */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+button:focus {
+    outline: 2px solid var(--bs-primary, #3498db);
+    outline-offset: 2px;
+}
+
+/* === MEDIA QUERIES === */
+@media (hover: hover) {
+    .card:hover { transform: translateY(-10px); }
+    .list-group-item:hover { transform: scale(1.05); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .list-group-item i:hover { transform: scale(1.3) rotate(15deg); color: var(--bs-warning, #ff9900); }
+    .list-group-item span:hover { transform: scale(1.2); color: var(--bs-warning, #ff9900); }
+    .profile-photo:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    .nav-link:hover { color: var(--bs-warning, #ff9900) !important; transform: scale(1.05); }
+    .mt-4 a i:hover { transform: scale(1.2); color: var(--bs-warning, #ff9900); }
+}
+
+/* === TITRES DE SECTIONS COMPÉTENCES === */
+/* Uniformise la taille des h4 dans les blocs compétences */
+#competences h4 {
+    font-size: 1.5rem; /* ou la valeur souhaitée */
+}
