@@ -3,7 +3,7 @@
 
 Bienvenue sur mon portfolio ! Ce site présente mon parcours, mes compétences et mes projets en développement web.  
 
-🔗 **Lien du portfolio** : [clemence95.github.io/PortFolio](https://clemence95.github.io/PortFolio/)  
+🔗 **Lien du portfolio** : [clemence95.github.io/PortFolio](https://clemence95.github.io)  
 
 ---
 
