@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle-btn');
     const darkModeStyle = document.getElementById('dark-mode-style');
+    const resetBtn = document.getElementById('reset-theme-btn');
 
+    // Fonction pour mettre à jour l'icône du bouton
     const updateButtonIcon = (isDark) => {
         toggleBtn.textContent = isDark ? '🌞' : '🌙';
         toggleBtn.setAttribute('aria-pressed', isDark.toString());
     };
 
+    // Fonction pour activer/désactiver le thème
     const setTheme = (theme, persist = true) => {
         document.documentElement.classList.add('theme-transition');
         setTimeout(() => {
@@ -19,37 +22,43 @@ document.addEventListener('DOMContentLoaded', () => {
         if (persist) {
             localStorage.setItem('theme', theme);
         }
-        updateButtonIcon(isDark);
+        if (toggleBtn) updateButtonIcon(isDark);
     };
 
-    // Applique le thème à partir du stockage local OU de la préférence système
+    // Applique le thème enregistré ou celui du système
     const savedTheme = localStorage.getItem('theme');
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 
-    // Toggle forcé
-    toggleBtn.addEventListener('click', () => {
-        const currentTheme = !darkModeStyle.disabled ? 'dark' : 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme); // persist = true
-    });
+    // Cacher le bouton de bascule si un thème est déjà défini
+    if (savedTheme && toggleBtn) {
+        toggleBtn.style.display = 'none';
+    }
 
-    // Ne réagit que si AUCUN thème n’est défini manuellement
+    // Gestion du clic sur le bouton pour basculer manuellement
+    if (toggleBtn && !savedTheme) {
+        toggleBtn.addEventListener('click', () => {
+            const isCurrentlyDark = !darkModeStyle.disabled;
+            setTheme(isCurrentlyDark ? 'light' : 'dark');
+        });
+    }
+
+    // Réagit aux changements système UNIQUEMENT si aucun thème n'est stocké
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        const savedTheme = localStorage.getItem('theme');
-        if (!savedTheme) {
+        if (!localStorage.getItem('theme')) {
             setTheme(e.matches ? 'dark' : 'light', false);
         }
     });
 
-    // Réinitialise le thème et supprime la préférence stockée
-    const resetBtn = document.getElementById('reset-theme-btn');
+    // Bouton de réinitialisation (s'il existe)
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             localStorage.removeItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             setTheme(prefersDark ? 'dark' : 'light', false);
+            if (toggleBtn) toggleBtn.style.display = 'inline-block'; // Ré-affiche le bouton
         });
     }
 });
+
 
