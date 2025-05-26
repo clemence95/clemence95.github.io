@@ -3,14 +3,12 @@
 
 /* Variables CSS pour centraliser les couleurs */
 :root {
-    --color-bg: #f4f4f4;
-    --color-text: #333;
-    --color-primary: #3498db;
-    --color-accent: #ff9900;
-    --color-secondary: #800080;
-    --color-card-bg: #ffffff;
-    --color-link: #3498db;
-    --color-border: #dee2e6;
+    --bs-primary: #3498db;
+    --bs-warning: #ff9900;
+    --bs-secondary: #800080;
+    --bs-border-color: #dee2e6;
+    --bs-body-bg: #f4f4f4;
+    --bs-body-color: #333;
 }
 
 /* === GLOBAL === */
@@ -241,6 +239,26 @@ blockquote p, blockquote footer { color: var(--color-secondary, #800080) !import
 .rounded { border-radius: 0.5rem; }
 .text-center { text-align: center; }
 
+/* Embellissement des citations */
+blockquote {
+    border-left: 4px solid var(--bs-primary);
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+}
+
+/* Scrollbar personnalisée (WebKit) */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--bs-secondary, #800080);
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-track {
+    background-color: var(--bs-body-bg);
+}
+
 /* === RÉSEAUX SOCIAUX === */
 .mt-4 a {
     margin-right: 1rem;
@@ -272,6 +290,44 @@ button:focus {
     outline-offset: 2px;
 }
 
+/* Accessibilité : focus visible pour boutons et liens */
+button:focus-visible,
+a:focus-visible,
+.filter-btn:focus-visible,
+.nav-link:focus-visible {
+    outline: 2px solid var(--bs-primary, #3498db);
+    outline-offset: 2px;
+}
+
+/* Performance : will-change sur les éléments animés */
+.card,
+.profile-photo,
+figure img,
+.list-group-item,
+.mt-4 a i {
+    will-change: transform;
+}
+
+/* Transition douce sur body aussi */
+body.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive : paddings/margins réduits sur mobile */
+@media (max-width: 576px) {
+    section {
+        padding: 20px 5px;
+        margin: 10px 0;
+    }
+    .card {
+        margin-bottom: 10px;
+    }
+    .flip-card {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 /* === MEDIA QUERIES === */
 @media (hover: hover) {
     .card:hover { transform: translateY(-10px); }
@@ -287,4 +343,11 @@ button:focus {
 /* Uniformise la taille des h4 dans les blocs compétences */
 #competences h4 {
     font-size: 1.5rem; /* ou la valeur souhaitée */
+}
+
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
