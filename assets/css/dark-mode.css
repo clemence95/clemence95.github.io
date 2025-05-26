@@ -8,11 +8,26 @@
     --color-card-bg: #1e1e1e;
     --color-link: #bb86fc;
     --color-border: #333;
+
+    /* Surcharge des variables Bootstrap pour le mode sombre */
+    --bs-primary: #3498db;
+    --bs-warning: #ff9900;
+    --bs-secondary: #bb86fc;
+    --bs-border-color: #333;
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    --bs-secondary-bg: #232323;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
+}
+
+/* Transition douce pour le dark mode */
+body.theme-transition,
+html.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -84,6 +99,11 @@ textarea::placeholder {
     color: #aaaaaa;
 }
 
+/* Accessibilité : focus sur les champs de formulaire */
+input:focus, textarea:focus {
+    outline: 2px solid var(--color-primary);
+}
+
 /* Assombrir le pied de page */
 footer {
     background-color: #1a1a1a;
@@ -107,4 +127,16 @@ footer {
     background-color: #2a2a2a;
     color: var(--color-text);
     border: 1px solid var(--color-border);
+}
+
+/* Scrollbar personnalisée sombre (WebKit) */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--bs-secondary, #bb86fc);
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-track {
+    background-color: var(--bs-body-bg);
 }
