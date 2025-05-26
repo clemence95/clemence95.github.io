@@ -25,7 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Applique le thème à partir du stockage local OU de la préférence système
     const savedTheme = localStorage.getItem('theme');
     const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+        setTheme(savedTheme);
+    } else {
+        setTheme(userPrefersDark ? 'dark' : 'light');
+    }
 
     // Toggle forcé
     toggleBtn.addEventListener('click', () => {
