@@ -1,20 +1,13 @@
-// Code pour le basculement de thème (clair/sombre) basé sur les préférences de l'utilisateur.
-// Cette logique est courante et inspirée des pratiques standard avec localStorage et matchMedia.
-// Exécute le code une fois que le DOM est complètement chargé
 document.addEventListener('DOMContentLoaded', () => {
-    // Récupère le bouton de basculement du thème et le style pour le mode sombre
     const toggleBtn = document.getElementById('theme-toggle-btn');
     const darkModeStyle = document.getElementById('dark-mode-style');
 
-    // Fonction pour mettre à jour l'icône du bouton
     const updateButtonIcon = (isDark) => {
         toggleBtn.textContent = isDark ? '🌞' : '🌙';
         toggleBtn.setAttribute('aria-pressed', isDark.toString());
     };
 
-    // Fonction pour activer/désactiver le thème
-    const setTheme = (theme) => {
-        // Ajoute la classe de transition pour une animation douce
+    const setTheme = (theme, persist = true) => {
         document.documentElement.classList.add('theme-transition');
         setTimeout(() => {
             document.documentElement.classList.remove('theme-transition');
@@ -23,34 +16,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const isDark = theme === 'dark';
         darkModeStyle.disabled = !isDark;
         document.documentElement.setAttribute('data-bs-theme', theme);
-        localStorage.setItem('theme', theme);
+        if (persist) {
+            localStorage.setItem('theme', theme);
+        }
         updateButtonIcon(isDark);
     };
 
-    // Gestion du clic sur le bouton
-    toggleBtn.addEventListener('click', () => {
-        const isCurrentlyDark = !darkModeStyle.disabled;
-        setTheme(isCurrentlyDark ? 'light' : 'dark');
-    });
-
-    // Initialisation : lire la préférence enregistrée OU celle du système
+    // Applique le thème à partir du stockage local OU de la préférence système
     const savedTheme = localStorage.getItem('theme');
     const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
 
-    // Réagit au changement de préférence système
+    // Toggle forcé
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = !darkModeStyle.disabled ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme); // persist = true
+    });
+
+    // Ne réagit que si AUCUN thème n’est défini manuellement
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
+        const savedTheme = localStorage.getItem('theme');
+        if (!savedTheme) {
+            setTheme(e.matches ? 'dark' : 'light', false);
         }
     });
 
-    // Ajout du bouton de réinitialisation du thème si présent
+    // Réinitialise le thème et supprime la préférence stockée
     const resetBtn = document.getElementById('reset-theme-btn');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             localStorage.removeItem('theme');
-            setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDark ? 'dark' : 'light', false);
         });
     }
 });
+
