@@ -41,15 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(e.matches ? 'dark' : 'light', false);
         }
     });
-
-    // Réinitialise le thème et supprime la préférence stockée
-    const resetBtn = document.getElementById('reset-theme-btn');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            localStorage.removeItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            setTheme(prefersDark ? 'dark' : 'light', false);
-        });
-    }
 });
 
