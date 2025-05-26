@@ -8,14 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour mettre à jour l'icône du bouton
     const updateButtonIcon = (isDark) => {
-        toggleBtn.textContent = isDark ? '🌞' : '🌙'; // Soleil = clair, Lune = sombre
+        toggleBtn.textContent = isDark ? '🌞' : '🌙';
+        toggleBtn.setAttribute('aria-pressed', isDark.toString());
     };
 
     // Fonction pour activer/désactiver le thème
     const setTheme = (theme) => {
+        // Ajoute la classe de transition pour une animation douce
+        document.documentElement.classList.add('theme-transition');
+        setTimeout(() => {
+            document.documentElement.classList.remove('theme-transition');
+        }, 300);
+
         const isDark = theme === 'dark';
         darkModeStyle.disabled = !isDark;
-        document.documentElement.setAttribute('data-bs-theme', theme); // <-- Ajouté
+        document.documentElement.setAttribute('data-bs-theme', theme);
         localStorage.setItem('theme', theme);
         updateButtonIcon(isDark);
     };
@@ -28,11 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialisation : lire la préférence enregistrée OU celle du système
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark');
-    } else {
-        setTheme('light');
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
+
+    // Réagit au changement de préférence système
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
+    // Ajout du bouton de réinitialisation du thème si présent
+    const resetBtn = document.getElementById('reset-theme-btn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            localStorage.removeItem('theme');
+            setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        });
     }
 });
