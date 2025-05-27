@@ -62,8 +62,10 @@ a:hover {
 /* Survol et focus des listes de compétences et projets */
 .list-group-item:hover,
 .list-group-item:focus {
-    background-color: #2a2a2a; /* Fond sombre */
-    color: var(--color-text); /* Texte clair */
+    background-color: #2a2a2a;
+    /* Fond sombre */
+    color: var(--color-text);
+    /* Texte clair */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-color: var(--color-border);
 }
@@ -71,7 +73,8 @@ a:hover {
 /* Survol des icônes et du texte dans les listes */
 .list-group-item i:hover,
 .list-group-item span:hover {
-    color: var(--color-accent); /* Couleur orange */
+    color: var(--color-accent);
+    /* Couleur orange */
 }
 
 /* Harmoniser les cartes "flip" */
@@ -100,7 +103,8 @@ textarea::placeholder {
 }
 
 /* Accessibilité : focus sur les champs de formulaire */
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: 2px solid var(--color-primary);
 }
 
@@ -133,10 +137,195 @@ footer {
 body::-webkit-scrollbar {
     width: 12px;
 }
+
 body::-webkit-scrollbar-thumb {
     background-color: var(--bs-secondary, #bb86fc);
     border-radius: 6px;
 }
+
 body::-webkit-scrollbar-track {
     background-color: var(--bs-body-bg);
+}
+
+/* Texte blanc pour le titre de la citation et l'auteur */
+h2.text-body,
+h2.mb-4.text-body {
+    color: #fff !important;
+}
+
+.blockquote-footer.text-body-secondary,
+.blockquote-footer .text-body-secondary,
+.blockquote-footer span#author {
+    color: #fff !important;
+}
+
+/* Texte blanc pour le titre et le paragraphe des compétences techniques */
+h2.text-center.text-body-emphasis {
+    color: #fff !important;
+}
+
+p.text-center.mb-4.text-body {
+    color: #fff !important;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+html[data-bs-theme="dark"] body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: sparkle 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)) brightness(1.3) blur(0.3px);
+
+    background-image:
+        radial-gradient(6px 4px at 10% 20%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
+        radial-gradient(5px 4px at 30% 80%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(6px 4px at 60% 10%, rgba(255, 255, 255, 0.85) 0%, transparent 100%),
+        radial-gradient(5px 4px at 90% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(6px 4px at 70% 70%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(4px 3px at 15% 10%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
+        radial-gradient(5px 4px at 20% 85%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(5px 3px at 45% 40%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
+        radial-gradient(5px 3px at 75% 25%, rgba(255, 255, 255, 0.75) 0%, transparent 100%),
+        radial-gradient(5px 3px at 95% 80%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(4px 3px at 50% 50%, rgba(255, 255, 255, 0.95) 0%, transparent 100%),
+        radial-gradient(5px 4px at 65% 45%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(5px 4px at 35% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 100%),
+        radial-gradient(3px 3px at 85% 60%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
+        radial-gradient(4px 3px at 75% 85%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(5px 4px at 25% 25%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(3px 2px at 55% 70%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(4px 3px at 65% 45%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(5px 4px at 35% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+        radial-gradient(3px 3px at 85% 60%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(6px 4px at 50% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(4px 3px at 75% 85%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(5px 4px at 5% 5%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(5px 4px at 95% 95%, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+}
+
+html[data-bs-theme="dark"] body::before {
+    opacity: 0.25;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Masquer la scrollbar partout (body ET html) */
+html,
+body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* === ÉTOILE FILANTE NATURELLE ET SUBTILE === */
+.shooting-stars-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+html[data-bs-theme="dark"] .shooting-stars-container {
+    display: block;
+}
+
+/* Étoile filante */
+.shooting-star {
+    position: absolute;
+    top: -10%;
+    left: 110%;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: diagonal-shoot 180s ease-in-out infinite;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Traînée inclinée */
+.shooting-star::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+    transform: rotate(-45deg);
+    transform-origin: left center;
+    opacity: 0;
+    animation: trail-fade 180s ease-in-out infinite;
+}
+
+/* Mouvement lent en diagonale */
+@keyframes diagonal-shoot {
+    0% {
+        top: -10%;
+        left: 110%;
+        opacity: 0;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    6% {
+        top: 110%;
+        left: -20%;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Disparition de la traînée après passage */
+@keyframes trail-fade {
+    0% {
+        opacity: 0;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    6% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
