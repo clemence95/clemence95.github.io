@@ -44,5 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(e.matches ? 'dark' : 'light', false);
         }
     });
+
+    // Gestion du soleil/nuages qui montent et disparaissent selon le scroll
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const ratio = docHeight > 0 ? scrollY / docHeight : 0;
+
+        // Applique la montée à partir de 80% du scroll
+        document.body.classList.toggle('sky-hide-section', ratio > 0.8);
+        // Disparition totale en bas de page
+        document.body.classList.toggle('sky-hide-final', ratio > 0.97);
+
+        // Met à jour la variable CSS pour la montée
+        if (ratio > 0.8) {
+            document.documentElement.style.setProperty('--sky-hide', `-${Math.round(300 * Math.max(0, (ratio - 0.8) / 0.2))}px`);
+        } else {
+            document.documentElement.style.setProperty('--sky-hide', '0');
+        }
+    });
 });
 
