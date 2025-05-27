@@ -22,23 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonIcon(isDark);
     };
 
-    // Applique le thème à partir du stockage local OU de la préférence système
+    // Applique le thème enregistré ou le thème clair par défaut
     const savedTheme = localStorage.getItem('theme');
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'dark' || savedTheme === 'light') {
         setTheme(savedTheme);
     } else {
-        setTheme(userPrefersDark ? 'dark' : 'light');
+        setTheme('light'); // Thème par défaut
     }
 
-    // Toggle forcé
+    // Toujours permettre le changement de thème
     toggleBtn.addEventListener('click', () => {
         const currentTheme = !darkModeStyle.disabled ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme); // persist = true
+        setTheme(newTheme);
     });
 
-    // Ne réagit que si AUCUN thème n’est défini manuellement
+    // Réagit au changement de thème système si aucun thème n'est défini manuellement
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         const savedTheme = localStorage.getItem('theme');
         if (!savedTheme) {
