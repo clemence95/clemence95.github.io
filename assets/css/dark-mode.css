@@ -159,15 +159,6 @@ h2.mb-4.text-body {
     color: #fff !important;
 }
 
-/* Texte blanc pour le titre et le paragraphe des compétences techniques */
-h2.text-center.text-body-emphasis {
-    color: #fff !important;
-}
-
-p.text-center.mb-4.text-body {
-    color: #fff !important;
-}
-
 @keyframes sparkle {
 
     0%,

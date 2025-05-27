@@ -395,3 +395,23 @@ html[data-bs-theme="dark"] body::after {
     }
 }
 
+/* Texte blanc pour le titre et le paragraphe des compétences techniques */
+h2.text-center.text-body-emphasis {
+    color: #fff !important;
+}
+
+p.text-center.mb-4.text-body {
+    color: #fff !important;
+}
+
+/* Texte blanc pour le titre de la citation et l'auteur */
+h2.text-body,
+h2.mb-4.text-body {
+    color: #fff !important;
+}
+
+.blockquote-footer.text-body-secondary,
+.blockquote-footer .text-body-secondary,
+.blockquote-footer span#author {
+    color: #fff !important;
+}
