@@ -13,6 +13,7 @@
 body {
   background: var(--main-bg);
   color: var(--main-text);
+  overflow-x: hidden; /* Empêche la scrollbar horizontale lors des animations de zoom */
 }
 
 /* Forcer la couleur claire sur tous les textes Bootstrap */
@@ -126,11 +127,67 @@ main { padding-bottom: 90px; }
   }
 }
 
-/* Effet au survol des cartes de compétences */
-.skill-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 24px 0 var(--accent2);
-  transition: transform 0.2s, box-shadow 0.2s;
+/* Empêche tout débordement au zoom et donne plus d'espace autour des cartes */
+#skills .row.g-4,
+#soft-skills .row.g-4 {
+  overflow: visible; /* autorise l'espace autour, mais pas de scroll */
+  position: relative;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Les colonnes prennent plus d'espace pour éviter le débordement au zoom */
+#skills .row.g-4 > [class^="col-"],
+#soft-skills .row.g-4 > [class^="col-"] {
+  padding-left: 18px;
+  padding-right: 18px;
+  box-sizing: border-box;
+}
+
+/* Cartes de compétences : zoom très léger, centrage, jamais de débordement */
+.skill-card {
+  transform-origin: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  will-change: transform;
+  contain: layout paint;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+#skills .row.g-4 .skill-card:hover,
+#soft-skills .row.g-4 .card:hover {
+  transform: scale(1.012);
+  box-shadow: 0 0 16px 0 var(--accent2);
+  z-index: 2;
+}
+
+/* Sur mobile/tablette, désactive totalement le zoom */
+@media (max-width: 991.98px) {
+  #skills .row.g-4 .skill-card:hover,
+  #soft-skills .row.g-4 .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  #skills .row.g-4,
+  #soft-skills .row.g-4 {
+    margin-left: -6px;
+    margin-right: -6px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  #skills .row.g-4 > [class^="col-"],
+  #soft-skills .row.g-4 > [class^="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+/* Optionnel : désactive l’expansion horizontale du body/html */
+html, body {
+  overflow-x: hidden !important;
 }
 
 /* Correction visibilité texte bouton actif (btn-primary) sur fond btn-outline-* */
@@ -169,4 +226,43 @@ main { padding-bottom: 90px; }
 .container, .container-fluid {
   overflow-x: auto;
   box-sizing: border-box;
+}
+
+/* Pour les éléments animés par zoom/scale */
+.zoom-effect,
+.skill-card,
+.card {
+  will-change: transform;
+  contain: layout;
+}
+
+/* Empêche la scrollbar verticale lors des animations de zoom sur les skills */
+#skills .row.g-4,
+#soft-skills .row.g-4 {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Limite le zoom pour rester dans le parent (skills) */
+.skill-card {
+  transform-origin: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  will-change: transform;
+  contain: layout paint;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#skills .row.g-4 .skill-card:hover,
+#soft-skills .row.g-4 .card:hover {
+  transform: scale(1.03); /* Zoom plus doux */
+  z-index: 2;
+}
+
+/* Empêche le débordement visuel sur mobile */
+@media (max-width: 991.98px) {
+  #skills .row.g-4 .skill-card:hover,
+  #soft-skills .row.g-4 .card:hover {
+    transform: scale(1.01);
+  }
 }
