@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-bs-theme="light">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Feuilles de style non essentielles -->
     <noscript>
@@ -56,7 +57,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Politique CSP sécurisée -->
     <meta http-equiv="Content-Security-Policy" content="
@@ -70,9 +71,9 @@
   ">
 </head>
 
-
 <body class="pb-100">
 
+    <!-- NAVBAR FIXE EN HAUT -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Navigation principale">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Portfolio</a>
@@ -81,529 +82,347 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav" role="menu">
-                <!-- Centrer les liens avec d-flex et justify-content-center -->
                 <ul class="navbar-nav d-flex justify-content-center w-100">
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="#about" role="menuitem">À propos</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="#competences" role="menuitem">Compétences</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="#projects" role="menuitem">Projets</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="#contact" role="menuitem">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#about" role="menuitem">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#skills" role="menuitem">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#projects" role="menuitem">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#contact" role="menuitem">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="container my-5 text-center">
-        <div class="row justify-content-center align-items-center">
-            <!-- Colonne photo -->
-            <div class="col-md-4">
-                <figure>
-                    <img src="assets/images/clemence_avatar.webp" class="profile-photo img-fluid shadow mb-3"
-                        alt="Portrait de Clémence Boitelle" width="200" height="200" loading="lazy">
-                </figure>
-                <!-- Réseaux sociaux sous l'image -->
-                <div class="mt-4 d-flex justify-content-center align-items-center gap-3">
-                    <a href="https://www.linkedin.com/in/clemence-boitelle-8627172b6" target="_blank"
-                        rel="noopener noreferrer" class="text-decoration-none"
-                        aria-label="Profil LinkedIn de Clémence Boitelle">
-                        <i class="fab fa-linkedin fa-2x text-primary"></i>
-                    </a>
-                    <a href="https://github.com/clemence95" target="_blank" rel="noopener noreferrer"
-                        class="text-decoration-none" aria-label="Profil GitHub de Clémence Boitelle">
-                        <i class="fab fa-github fa-2x text-dark"></i>
-                    </a>
-                    <a href="https://ko-fi.com/F2F51FDY4I" target="_blank" rel="noopener noreferrer"
-                        class="text-decoration-none d-flex align-items-center" aria-label="Soutiens Clémence sur Ko-fi">
-                        <i class="fas fa-coffee fa-2x kofi-icon me-2"></i>
-                        <span class="kofi-label fw-semibold">Me soutenir</span>
-                    </a>
-                </div>
-            </div>
+    <!-- SECTIONS EN SLIDER -->
+    <main class="container-fluid px-0 mb-5">
+        <section id="about" class="section active py-3 d-flex align-items-center justify-content-center text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
 
-            <!-- Colonne texte -->
-            <div class="col-md-8 text-md-start text-center">
-                <article>
-                    <h2 class="text-primary display-5 fw-bold mb-1">Clémence Boitelle</h2>
-                    <h3 class="text-muted h5 mb-4">Développeuse d'applications</h3>
-                    <p class="lead">
-                        Mon parcours reflète une volonté constante d’apprendre et de contribuer à un avenir où la
-                        technologie est au service de l’humain.
-                        Après une première carrière en tant que téléconseillère, j’ai développé de solides compétences
-                        en communication et en gestion de la relation client.
-                        Animée par une passion pour le numérique, j’ai entrepris une reconversion pour devenir
-                        <span class="text-primary fw-semibold">Conceptrice Développeuse d’Applications</span>.
-                    </p>
-                    <p class="lead">
-                        Aujourd’hui, je poursuis mon évolution en candidatant à deux formations complémentaires :
-                        le <span class="text-info fw-semibold">Master MIAGE</span> et la
-                        <span class="text-success fw-semibold">Licence Professionnelle Réseaux & Télécommunications –
-                            Réseaux et Génie Informatique</span>, en alternance.
-                        Mon objectif : approfondir mes compétences techniques et en gestion de projet, tout en
-                        m’adaptant aux besoins concrets des entreprises.
-                        Je suis convaincue que le numérique peut être un levier pour créer des solutions utiles,
-                        durables et accessibles à tous.
-                    </p>
+                        <!-- Avatar -->
+                        <img src="assets/images/clemence_avatar.webp" alt="Portrait de Clémence Boitelle"
+                            class="rounded-circle shadow mb-4 img-fluid mt-5 animate__animated animate__fadeInDown"
+                            width="200" height="200" loading="lazy">
 
+                        <!-- Nom et titre -->
+                        <h1 class="fw-bold text-primary animate__animated animate__fadeInDown animate__delay-1s">
+                            Clémence Boitelle</h1>
+                        <h2 class="mb-4 text-rose-violet animate__animated animate__fadeInDown animate__delay-2s">
+                            Développeuse d'applications</h2>
 
-                    <a href="assets/CV_2025-05-23_CLEMENCE_BOITELLE.pdf" class="btn btn-primary mt-3" target="_blank">
-                        <i class="fas fa-file-download me-2"></i> Télécharger mon CV
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Citation du jour -->
-    <section class="container my-5 text-center">
-        <h2 class="mb-4 text-body">Citation du jour</h2>
-        <blockquote id="quote" class="blockquote fst-italic text-body">
-            <p>Chargement...</p>
-            <footer class="blockquote-footer mt-2 text-body-secondary">
-                <span id="author"></span>
-            </footer>
-        </blockquote>
-        <button class="btn btn-primary mt-3" id="new-quote-btn">Nouvelle citation</button>
-    </section>
-
-    <!-- Section Compétences Techniques alignée avec le CV -->
-    <section id="competences" class="container mt-5">
-        <h2 class="text-center text-body-emphasis">Compétences Techniques</h2>
-        <p class="text-center mb-4 text-body">
-            Voici les compétences que j’ai développées à travers mes projets, ma formation de développeuse
-            d'applications et mes expériences. J’aime apprendre en continu et adapter mes outils aux
-            besoins des projets.
-        </p>
-
-        <!-- Boutons de filtre par domaine -->
-        <div class="text-center mb-4">
-            <button class="btn btn-outline-info m-1 filter-btn" data-category="all">Tout</button>
-            <button class="btn btn-outline-warning m-1 filter-btn" data-category="langages">Langages</button>
-            <button class="btn btn-outline-success m-1 filter-btn" data-category="bdd">Bases de données</button>
-            <button class="btn btn-outline-primary m-1 filter-btn" data-category="outils">Outils</button>
-            <button class="btn btn-outline-secondary m-1 filter-btn" data-category="methodes">Méthodologies</button>
-            <button class="btn btn-outline-danger m-1 filter-btn" data-category="securite">Sécurité</button>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 filter-item fade-in" data-category="langages">
-                <h4 class="text-primary fw-bold">Langages & Frameworks</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-code me-2 text-primary"></i>
-                        PHP (<strong>Symfony</strong>), Java (<strong>JavaFX</strong>), JavaScript (ES6+), Python
-                        <span class="badge bg-secondary">Notions</span>, HTML5, CSS3, Bootstrap
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-6 filter-item fade-in" data-category="bdd">
-                <h4 class="text-success fw-bold">Bases de données</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-database me-2 text-success"></i>
-                        MySQL, MariaDB (via phpMyAdmin), PostgreSQL <span class="badge bg-secondary">Notions</span>
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-project-diagram me-2 text-success"></i>
-                        Modélisation UML et Merise (MCD / MLD)
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-md-6 filter-item fade-in" data-category="outils">
-                <h4 class="text-primary fw-bold">Environnements & outils</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-tools me-2 text-primary"></i>
-                        VS Code, Git / GitHub, WAMP
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fab fa-docker me-2 text-primary"></i>
-                        Docker <span class="badge bg-secondary">Notions</span>, WSL
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-network-wired me-2 text-primary"></i>
-                        Trello, phpMyAdmin
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-6 filter-item fade-in" data-category="methodes">
-                <h4 class="text-secondary fw-bold">Méthodologies & gestion</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-sitemap me-2 text-secondary"></i>
-                        Méthode Agile (Scrum & Kanban <span class="badge bg-secondary">Notions</span>)
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-tasks me-2 text-secondary"></i>
-                        Suivi de cahier des charges, organisation de projet
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-md-6 filter-item fade-in" data-category="securite">
-                <h4 class="text-danger fw-bold">Documentation & sécurité</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-file-alt me-2 text-danger"></i>
-                        Rédaction technique, structuration de projet, veille
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-shield-alt me-2 text-danger"></i>
-                        Sécurité : JWT (authentification via token), Symfony utilise l'algorithme
-                        <abbr
-                            title="Paramètre 'auto' dans Symfony : choisit le meilleur algo disponible comme Argon2id ou Bcrypt">auto</abbr>
-                        pour le hachage des mots de passe (Bcrypt ou Argon2id selon le serveur), conformité RGPD
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-6 filter-item fade-in" data-category="methodes outils">
-                <h4 class="text-info fw-bold">Tests & automatisation</h4>
-                <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-vial me-2 text-info"></i>
-                        PHPUnit – Tests unitaires
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-cogs me-2 text-info"></i>
-                        Automatisation de processus avec scripts personnalisés
-                    </li>
-                    <li class="list-group-item bg-body text-body border-0">
-                        <i class="fas fa-robot me-2 text-info"></i>
-                        ChatGPT – Assistance IA pour le développement et la gestion
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Section Compétences Non Techniques -->
-    <section id="competences-non-techniques" class="container mt-5">
-        <h2 class="text-center mb-4">Savoir-être</h2>
-        <div class="row justify-content-center">
-
-            <!-- Carte 1 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-comments text-primary"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Communication efficace<br>et écoute active
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 2 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-users text-success"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Travail d'équipe<br>et collaboration
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 3 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-lightbulb text-warning"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Résolution de<br>problèmes complexes
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 4 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-clock text-info"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Gestion du temps<br>et respect des délais
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 5 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-exchange-alt text-danger"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Adaptabilité<br>et apprentissage continu
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 6 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-brain text-secondary"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Esprit d'analyse<br>et curiosité
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 7 -->
-            <div class="col-6 col-md-3">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front flip-card-front-style">
-                            <i class="fas fa-rocket text-info"></i>
-                        </div>
-                        <div class="flip-card-back flip-card-back-style">
-                            Passion pour l'innovation<br>et les nouvelles technologies
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Section Projets avec ligne verticale et points -->
-    <section id="projects" class="container mt-5">
-        <h2 class="text-center">Projets</h2>
-        <div class="row">
-            <!-- Colonne du projet GestionCommerciale -->
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">GestionCommerciale</h3>
-                        <p class="card-text">Développement d'une application Java consommant les API du projet Symfony
-                            "VillageGreen".</p>
-                    </div>
-                </div>
-                <h3>GestionCommerciale</h3>
-                <ul class="timeline">
-                    <li>
-                        <strong>Objectif :</strong> Développer une application de gestion commerciale en Java en
-                        consommant des API Symfony pour la gestion des produits et des commandes.
-                    </li>
-                    <li>
-                        <strong>Technologies utilisées :</strong> Java, JavaFX, Symfony, API REST
-                    </li>
-                    <li>
-                        <strong>Contribution :</strong> J'ai conçu l'interface utilisateur en JavaFX, intégré les API,
-                        et implémenté les fonctionnalités CRUD pour la gestion des commandes.
-                    </li>
-                    <li>
-                        <strong>Défis :</strong> J'ai dû sécuriser les échanges de données entre l'application et les
-                        API, et j'ai implémenté des tests unitaires pour valider les interactions avec l'API.
-                    </li>
-                    <li>
-                        <strong>Résultat :</strong> L'application fonctionne et est utilisée pour la gestion commerciale
-                        au sein du projet "VillageGreen".
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Colonne du projet VillageGreen -->
-            <div class="col-md-6 mb-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">VillageGreen</h3>
-                        <p class="card-text">Développement d'une plateforme e-commerce complète utilisant Symfony et
-                            MySQL.</p>
-                    </div>
-                </div>
-                <h3>VillageGreen</h3>
-                <ul class="timeline">
-                    <li>
-                        <strong>Étape 1 : Conception du Dictionnaire de Données</strong><br>
-                        Conçu le dictionnaire de données pour organiser les informations relatives aux produits,
-                        utilisateurs, commandes, et paiements. Cette étape a structuré efficacement la base de données
-                        et optimisé les requêtes.
-                        <br>
-                        <a href="https://github.com/clemence95/new_villagegreen/blob/main/docs/dictionnaire-de-donnees.md"
-                            target="_blank">Voir le dictionnaire de données</a>
-                        <!-- Le bouton qui redirige vers une autre page -->
-                    </li>
-
-                    <li>
-                        <strong>Étape 2 : Création des Diagrammes</strong><br>
-                        Réalisé des diagrammes UML pour représenter les relations entre les entités et faciliter la
-                        conception de la base de données et des API REST.
-                    </li>
-                    <li>
-                        <strong>Étape 3 : Maquettage</strong><br>
-                        Conçu les maquettes du site, incluant les interfaces utilisateurs pour la gestion du panier et
-                        des commandes, en fonction des besoins fonctionnels du client.
-                    </li>
-                    <li>
-                        <strong>Étape 4 : Développement Frontend</strong><br>
-                        Développé le frontend en utilisant HTML, CSS et JavaScript, avec un focus particulier sur
-                        l'expérience utilisateur pour la gestion du panier et des commandes.
-                    </li>
-                    <li>
-                        <strong>Étape 5 : Développement Backend</strong><br>
-                        Développé le backend avec Symfony pour gérer la base de données, les commandes, et
-                        l'authentification. Intégré les API REST et sécurisé les données avec JWT.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Snake Game -->
-            <div class="col-md-6 mb-5">
-                <!-- Card for the description -->
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Snake Game</h3>
-                        <p class="card-text">Voici un jeu Snake que j'ai développé en Python. Vous pouvez télécharger le
-                            code source depuis GitHub pour l'exécuter localement.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline -->
-                <ul class="timeline">
-                    <li>
-                        <p class="mb-20">
-                            <strong>Note :</strong> Le jeu est destiné à être exécuté sur un ordinateur et ne peut pas
-                            être joué directement sur un téléphone. Téléchargez le fichier ZIP pour l'exécuter
-                            localement sur votre machine.
+                        <!-- Présentation -->
+                        <p class="lead text-body mb-4 animate__animated animate__fadeInLeft">
+                            Mon parcours reflète une volonté constante d’apprendre et de contribuer à un avenir où la
+                            technologie est au service de l’humain.
+                            Après une première carrière en relation client, j’ai entrepris une reconversion passionnée
+                            pour devenir
+                            <span class="fw-semibold text-primary">Conceptrice Développeuse d’Applications</span>.
                         </p>
-                    </li>
-
-                    <li>
-                        <p class="mb-20">
-                            ⚠️ <strong>Compatibilité des fichiers :</strong><br>
-                            <strong>Windows</strong> → Le fichier `.exe` ne fonctionne que sous Windows.<br>
-                            <strong>Mac</strong> → Les applications macOS sont généralement au format `.app`, et souvent
-                            distribuées via un `.dmg` (Disk Image).<br>
-                            <strong>Linux</strong> → Les programmes sont souvent des exécutables ELF ou des scripts
-                            `.sh` à exécuter dans un terminal.
+                        <p class="lead text-body mb-4 animate__animated animate__fadeInRight">
+                            Je poursuis aujourd’hui mon évolution en visant une alternance pour un
+                            <span class="text-info fw-semibold">Master MIAGE</span> ou une
+                            <span class="text-success fw-semibold">Licence Professionnelle Réseaux</span>.
+                            Mon objectif : créer des solutions utiles, durables et accessibles.
                         </p>
-                    </li>
 
-                    <li>
-                        <p class="mb-20">
-                            💡 Si vous êtes sur Mac ou Linux, vous pouvez exécuter directement le code source en
-                            installant Python et en lançant <code>python snake.py</code>.
-                        </p>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/clemence95/Snake_game" class="btn btn-primary" target="_blank"
-                            rel="noopener noreferrer">
-                            Voir le code source sur GitHub
+                        <!-- Bouton CV -->
+                        <a href="assets/CV_2025-05-23_CLEMENCE_BOITELLE.pdf" class="btn btn-primary mb-4"
+                            target="_blank">
+                            <i class="fas fa-file-download me-2"></i> Télécharger mon CV
                         </a>
-                        <!-- Le "rel='noopener noreferrer'" empêche des vulnérabilités liées au reverse tabnabbing et garantit une meilleure sécurité lorsqu'on ouvre un lien dans un nouvel onglet (target="_blank"). -->
-                    </li>
-                    <li>
-                        <a href="https://github.com/clemence95/Snake_game/releases/download/v1.0/snake_game.zip"
-                            class="btn btn-secondary" download>
-                            Télécharger le jeu (ZIP)
-                        </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <!-- Citation du jour intégrée -->
+                <div class="fade-in bg-beige-quote" id="quote-section">
+                    <h3 class="mb-3 text-body">Citation du jour</h3>
+                    <blockquote id="quote" class="blockquote fst-italic text-body">
+                        <p>Chargement...</p>
+                        <footer class="blockquote-footer mt-2 text-body-secondary">
+                            <span id="author" class="text-rose-violet"></span>
+                        </footer>
+                    </blockquote>
+                    <button class="btn btn-outline-primary mt-3" id="new-quote-btn">Nouvelle citation</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section container py-5 d-none">
+            <h2 class="text-center text-body-emphasis mb-5 mt-5">Compétences Techniques</h2>
+            <p class="text-center mb-4 text-body">
+                Voici les compétences que j’ai développées à travers mes projets, ma formation de développeuse
+                d'applications et mes expériences. J’aime apprendre en continu et adapter mes outils aux
+                besoins des projets.
+            </p>
+
+            <!-- Boutons de filtre par domaine -->
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-info m-1 filter-btn" data-category="all">Tout</button>
+                <button class="btn btn-outline-warning m-1 filter-btn" data-category="langages">Langages</button>
+                <button class="btn btn-outline-success m-1 filter-btn" data-category="bdd">Bases de données</button>
+                <button class="btn btn-outline-primary m-1 filter-btn" data-category="outils">Outils</button>
+                <button class="btn btn-outline-secondary m-1 filter-btn" data-category="methodes">Méthodologies</button>
+                <button class="btn btn-outline-danger m-1 filter-btn" data-category="securite">Sécurité</button>
+            </div>
+
+            <div class="row g-4 row-cols-1 row-cols-md-2">
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="langages">
+                    <h4 class="text-primary fw-bold">Langages & Frameworks</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-code me-2 text-primary"></i>
+                            PHP (<strong>Symfony</strong>), Java (<strong>JavaFX</strong>), JavaScript (ES6+), Python
+                            <span class="badge bg-secondary">Notions</span>, HTML5, CSS3, Bootstrap
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="bdd">
+                    <h4 class="text-success fw-bold">Bases de données</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-database me-2 text-success"></i>
+                            MySQL, MariaDB (via phpMyAdmin), PostgreSQL <span class="badge bg-secondary">Notions</span>
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-project-diagram me-2 text-success"></i>
+                            Modélisation UML et Merise (MCD / MLD)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="outils">
+                    <h4 class="text-primary fw-bold">Environnements & outils</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-tools me-2 text-primary"></i>
+                            VS Code, Git / GitHub, WAMP
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fab fa-docker me-2 text-primary"></i>
+                            Docker <span class="badge bg-secondary">Notions</span>, WSL
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-network-wired me-2 text-primary"></i>
+                            Trello, phpMyAdmin
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="methodes">
+                    <h4 class="text-secondary fw-bold">Méthodologies & gestion</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-sitemap me-2 text-secondary"></i>
+                            Méthode Agile (Scrum & Kanban <span class="badge bg-secondary">Notions</span>)
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-tasks me-2 text-secondary"></i>
+                            Suivi de cahier des charges, organisation de projet
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="securite">
+                    <h4 class="text-danger fw-bold">Documentation & sécurité</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-file-alt me-2 text-danger"></i>
+                            Rédaction technique, structuration de projet, veille
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-shield-alt me-2 text-danger"></i>
+                            Sécurité : JWT (authentification via token), Symfony utilise l'algorithme
+                            <abbr
+                                title="Paramètre 'auto' dans Symfony : choisit le meilleur algo disponible comme Argon2id ou Bcrypt">auto</abbr>
+                            pour le hachage des mots de passe (Bcrypt ou Argon2id selon le serveur), conformité RGPD
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                    data-category="outils">
+                    <h4 class="text-info fw-bold">Tests & automatisation</h4>
+                    <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-vial me-2 text-info"></i>
+                            PHPUnit – Tests unitaires
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-cogs me-2 text-info"></i>
+                            Automatisation de processus avec scripts personnalisés
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-robot me-2 text-info"></i>
+                            ChatGPT – Assistance IA pour le développement et la gestion
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section container py-5 d-none">
+            <h2 class="text-center animate__animated animate__fadeInDown mb-5 mt-5">Projets</h2>
+            <div class="row gy-5 row-cols-1 row-cols-md-2">
+
+                <!-- Projet GestionCommerciale -->
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary">GestionCommerciale</h3>
+                            <p class="card-text">Développement d'une application Java consommant les API du projet
+                                Symfony "VillageGreen".</p>
+                        </div>
+                    </div>
+                    <ul class="timeline">
+                        <li><strong>Objectif :</strong> Développer une app de gestion commerciale en Java avec API
+                            Symfony.</li>
+                        <li><strong>Technos :</strong> Java, JavaFX, Symfony, API REST</li>
+                        <li><strong>Contribution :</strong> UI JavaFX, intégration API, CRUD commandes</li>
+                        <li><strong>Défis :</strong> Sécurisation des échanges et tests unitaires</li>
+                        <li><strong>Résultat :</strong> Application fonctionnelle utilisée avec VillageGreen</li>
+                    </ul>
+                </div>
+
+                <!-- Projet VillageGreen -->
+                <div class="col-md-6 animate__animated animate__fadeInRight">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">VillageGreen</h3>
+                            <p class="card-text">Plateforme e-commerce complète développée avec Symfony et MySQL.</p>
+                        </div>
+                    </div>
+                    <ul class="timeline">
+                        <li><strong>Dictionnaire de données :</strong> structuration BDD <a
+                                href="https://github.com/clemence95/new_villagegreen/blob/main/docs/dictionnaire-de-donnees.md"
+                                target="_blank">[voir]</a></li>
+                        <li><strong>Diagrammes UML</strong> pour modéliser les entités</li>
+                        <li><strong>Maquettage UX/UI</strong> basé sur les besoins</li>
+                        <li><strong>Frontend :</strong> HTML/CSS/JS, gestion panier et commandes</li>
+                        <li><strong>Backend :</strong> Symfony + API REST + sécurité JWT</li>
+                    </ul>
+                </div>
+
+                <!-- Snake Game -->
+                <div class="col-md-6 animate__animated animate__fadeInUp">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title text-info">Snake Game</h3>
+                            <p class="card-text">Jeu Snake développé en Python avec téléchargement disponible.</p>
+                        </div>
+                    </div>
+                    <ul class="timeline">
+                        <li><strong>Compatibilité :</strong> Windows (.exe), Mac (.app/.dmg), Linux (.sh/.py)</li>
+                        <li><strong>Utilisation :</strong> <code>python snake.py</code> (nécessite Python installé)</li>
+                        <li class="d-flex flex-column flex-md-row gap-2 align-items-center">
+                            <a href="https://github.com/clemence95/Snake_game" class="btn btn-primary btn-sm mb-0"
+                                target="_blank">Voir le code</a>
+                            <a href="https://github.com/clemence95/Snake_game/releases/download/v1.0/snake_game.zip"
+                                class="btn btn-secondary btn-sm mb-0" download>Télécharger le ZIP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section container mt-5 mb-5 d-none py-5">
+            <h2 class="text-center">Contactez-moi</h2>
+
+            <form id="contactForm" action="https://formsubmit.co/ad8db044244746d98ca75d2b8f12d0f2" method="POST"
+                class="mt-4">
+                <input type="hidden" name="_subject" value="Message de mon portfolio">
+                <input type="hidden" name="_next" value="https://clemence95.github.io/?status=success">
+                <input type="hidden" name="_error" value="https://clemence95.github.io/?status=error">
+
+                <!-- Champ honeypot (anti-bot) -->
+                <input type="text" name="_honey" class="hidden-honey d-none" aria-hidden="true" tabindex="-1">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" id="name" name="name" class="form-control" autocomplete="name"
+                        placeholder="Entrez votre nom" aria-describedby="name-error">
+                    <div id="name-error" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" autocomplete="email"
+                        placeholder="Entrez votre email" aria-describedby="email-error">
+                    <div id="email-error" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel"
+                        placeholder="Entrez votre numéro de téléphone" aria-describedby="phone-error">
+                    <div id="phone-error" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="4" autocomplete="off"
+                        placeholder="Entrez votre message" aria-describedby="message-error"></textarea>
+                    <div id="message-error" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <button id="submitBtn" type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+
+                <!-- Zone de message après l'envoi du formulaire -->
+                <div id="form-message" class="alert d-none" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- BOUTONS DE NAVIGATION ENTRE SECTIONS (juste après </main>) -->
+    <div id="section-navigation" class="text-center mb-2">
+        <button id="prev-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section précédente">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button id="next-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section suivante">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!-- FOOTER collant en bas -->
+    <footer class="text-center py-3 shadow fixed-bottom">
+        <div class="container">
+            <div class="col-12">
+                <p class="mb-2 small text-white">&copy; 2025 Clémence Boitelle</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://www.linkedin.com/in/clemence-boitelle-8627172b6" target="_blank" rel="noopener"
+                        aria-label="LinkedIn" class="text-link">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="https://github.com/clemence95" target="_blank" rel="noopener" aria-label="GitHub"
+                        class="text-link">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://ko-fi.com/F2F51FDY4I" target="_blank" rel="noopener"
+                        class="d-flex align-items-center text-link text-decoration-none" aria-label="Ko-fi">
+                        <i class="fas fa-coffee fa-lg me-1"></i>
+                        <span class="fw-semibold">Me soutenir</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="container mt-5 mb-5">
-        <h2 class="text-center">Contactez-moi</h2>
-
-        <form id="contactForm" action="https://formsubmit.co/ad8db044244746d98ca75d2b8f12d0f2" method="POST"
-            class="mt-4">
-            <input type="hidden" name="_subject" value="Message de mon portfolio">
-            <input type="hidden" name="_next" value="https://clemence95.github.io/?status=success">
-            <input type="hidden" name="_error" value="https://clemence95.github.io/?status=error">
-
-            <!-- Champ honeypot (anti-bot) -->
-            <input type="text" name="_honey" class="hidden-honey" aria-hidden="true" tabindex="-1">
-
-            <div class="mb-3">
-                <label for="name" class="form-label">Nom</label>
-                <input type="text" id="name" name="name" class="form-control" autocomplete="name"
-                    placeholder="Entrez votre nom" aria-describedby="name-error">
-                <div id="name-error" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-control" autocomplete="email"
-                    placeholder="Entrez votre email" aria-describedby="email-error">
-                <div id="email-error" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Téléphone</label>
-                <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel"
-                    placeholder="Entrez votre numéro de téléphone" aria-describedby="phone-error">
-                <div id="phone-error" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" name="message" class="form-control" rows="4" autocomplete="off"
-                    placeholder="Entrez votre message" aria-describedby="message-error"></textarea>
-                <div id="message-error" class="text-danger"></div>
-            </div>
-            <div class="mb-3">
-                <button id="submitBtn" type="submit" class="btn btn-primary">Envoyer</button>
-            </div>
-
-            <!-- Zone de message après l'envoi du formulaire -->
-            <div id="form-message" class="alert d-none" role="alert" aria-live="polite"></div>
-        </form>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3 mt-auto fixed-bottom">
-        <p>© 2025 Clémence Boitelle</p>
     </footer>
 
-    <!-- Charger les scripts externes -->
-    <script src="assets/js/contact-validation.js" defer></script>
+    <!-- SCRIPTS JS -->
+    <script src="assets/js/section-navigation.js" defer></script>
     <script src="assets/js/quote-loader.js" defer></script>
-    <script src="assets/js/form-status-handler.js" defer></script>
     <script src="assets/js/competence-filter.js" defer></script>
-
+    <script src="assets/js/contact-validation.js" defer></script>
+    <script src="assets/js/form-status-handler.js" defer></script>
     <!-- Bootstrap 5.3.3 JS et Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
         defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
         integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"
         defer></script>
-
-    <div class="shooting-stars-container">
-        <div class="shooting-star star-1"></div>
-        <div class="shooting-star star-2"></div>
-    </div>
 </body>
 
 </html>
