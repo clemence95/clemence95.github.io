@@ -127,10 +127,13 @@ main { padding-bottom: 90px; }
   }
 }
 
-/* Empêche tout débordement au zoom et donne plus d'espace autour des cartes */
+/* Améliorations et simplifications possibles : */
+
+/* 1. Supprime les doublons et conflits sur overflow des rows */
 #skills .row.g-4,
 #soft-skills .row.g-4 {
-  overflow: visible; /* autorise l'espace autour, mais pas de scroll */
+  /* Choisis soit overflow: hidden, soit visible, mais pas les deux */
+  overflow: visible;
   position: relative;
   margin-left: -12px;
   margin-right: -12px;
@@ -138,38 +141,22 @@ main { padding-bottom: 90px; }
   padding-right: 12px;
 }
 
-/* Les colonnes prennent plus d'espace pour éviter le débordement au zoom */
-#skills .row.g-4 > [class^="col-"],
-#soft-skills .row.g-4 > [class^="col-"] {
-  padding-left: 18px;
-  padding-right: 18px;
-  box-sizing: border-box;
-}
-
-/* Cartes de compétences : zoom très léger, centrage, jamais de débordement */
-.skill-card {
-  transform-origin: center;
-  transition: transform 0.18s, box-shadow 0.18s;
-  will-change: transform;
-  contain: layout paint;
-  max-width: 100%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
+/* 2. Unifie la règle de zoom pour éviter les conflits */
 #skills .row.g-4 .skill-card:hover,
 #soft-skills .row.g-4 .card:hover {
   transform: scale(1.012);
   box-shadow: 0 0 16px 0 var(--accent2);
   z-index: 2;
+  cursor: default;
 }
 
-/* Sur mobile/tablette, désactive totalement le zoom */
+/* 3. Sur mobile, désactive le zoom proprement */
 @media (max-width: 991.98px) {
   #skills .row.g-4 .skill-card:hover,
   #soft-skills .row.g-4 .card:hover {
     transform: none !important;
     box-shadow: none !important;
+    cursor: default !important;
   }
   #skills .row.g-4,
   #soft-skills .row.g-4 {
@@ -185,9 +172,22 @@ main { padding-bottom: 90px; }
   }
 }
 
-/* Optionnel : désactive l’expansion horizontale du body/html */
-html, body {
-  overflow-x: hidden !important;
+/* 4. Pour éviter les conflits, retire les anciennes règles de zoom plus haut dans le fichier :
+   - Supprime les autres .skill-card:hover et .card:hover qui font scale(1.03) ou scale(1.01)
+   - Garde une seule version cohérente */
+
+/* 5. Pour la responsivité, tu peux ajouter : */
+@media (max-width: 575.98px) {
+  .skill-card, #soft-skills .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* 6. Pour la performance, tu peux regrouper will-change et contain sur les cartes */
+.skill-card,
+#soft-skills .card {
+  will-change: transform;
+  contain: layout paint;
 }
 
 /* Correction visibilité texte bouton actif (btn-primary) sur fond btn-outline-* */
