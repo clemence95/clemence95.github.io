@@ -266,3 +266,12 @@ main { padding-bottom: 90px; }
     transform: scale(1.01);
   }
 }
+
+/* Désactive le zoom et le contour vert sur Compétences Techniques */
+#skills .row.g-4 .skill-card,
+#skills .row.g-4 .skill-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  cursor: default !important;
+}
