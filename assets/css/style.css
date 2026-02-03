@@ -196,3 +196,20 @@ footer .text-link:hover {
 .container-fluid {
   overflow-x: visible;
 }
+
+/* Timeline : correction mobile */
+@media (max-width: 575.98px) {
+  .timeline {
+    border-left: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .timeline li {
+    padding-left: 0 !important;
+  }
+
+  .timeline li::before {
+    display: none !important;
+  }
+}
