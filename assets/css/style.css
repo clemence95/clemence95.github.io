@@ -199,18 +199,12 @@ footer .text-link:hover {
   overflow-x: visible;
 }
 
-@media (max-width: 575.98px) {
-  .timeline {
-    border-left: none !important;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
+/* Empêche le décalage au chargement */
+#section-navigation {
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+}
 
-  .timeline li {
-    padding-left: 0 !important;
-  }
-
-  .timeline li::before {
-    display: none !important;
-  }
+body.page-loaded #section-navigation {
+  opacity: 1;
 }

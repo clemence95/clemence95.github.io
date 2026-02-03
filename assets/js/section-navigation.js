@@ -100,3 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "ArrowLeft") showSection(current - 1);
     });
 });
+
+window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+});
