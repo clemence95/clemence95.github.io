@@ -96,13 +96,17 @@ footer .text-link:hover {
 
 #section-navigation {
   position: fixed;
-  left: 50%;
+  left: 0;
+  right: 0;
   bottom: calc(var(--footer-height) + var(--nav-offset));
-  transform: translateX(-50%);
   z-index: 1055;
+
   display: flex;
+  justify-content: center;
   gap: 16px;
-  padding: 0 10px;
+
+  padding: 0 16px;
+  box-sizing: border-box;
   background: transparent;
 }
 
@@ -123,10 +127,8 @@ footer .text-link:hover {
   }
 
   #section-navigation {
-    gap: 10px;
-    width: 100vw;
-    max-width: 100vw;
-    justify-content: center;
+    gap: 12px;
+    bottom: calc(var(--footer-height) + var(--nav-offset) + env(safe-area-inset-bottom));
   }
 
   #section-navigation button {
@@ -197,7 +199,6 @@ footer .text-link:hover {
   overflow-x: visible;
 }
 
-/* Timeline : correction mobile */
 @media (max-width: 575.98px) {
   .timeline {
     border-left: none !important;
