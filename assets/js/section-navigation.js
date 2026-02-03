@@ -1,64 +1,102 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Ne sélectionne que les sections enfants directs de <main>
     const main = document.querySelector("main");
-    const sections = main ? main.querySelectorAll("section") : [];
+    const sections = main ? Array.from(main.querySelectorAll(":scope > section")) : [];
     const nextBtn = document.getElementById("next-section");
     const prevBtn = document.getElementById("prev-section");
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navLinks = Array.from(document.querySelectorAll(".navbar-nav .nav-link"));
+
+    if (!sections.length) return;
+
     let current = 0;
 
-    function showSection(index) {
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    function setActiveNav(targetId) {
+        navLinks.forEach((a) => {
+            const href = a.getAttribute("href") || "";
+            const isActive = href === `#${targetId}`;
+            a.classList.toggle("active", isActive);
+            a.setAttribute("aria-current", isActive ? "page" : "false");
+        });
+    }
+
+    function updateButtons() {
+        if (prevBtn) prevBtn.disabled = current <= 0;
+        if (nextBtn) nextBtn.disabled = current >= sections.length - 1;
+    }
+
+    function showSection(index, { updateHash = true, scrollTop = true } = {}) {
+        index = clamp(index, 0, sections.length - 1);
+
         sections.forEach((section, i) => {
-            section.classList.add("d-none", "opacity-0");
-            section.classList.remove("d-block", "opacity-1", "active");
+            const isTarget = i === index;
+            section.classList.toggle("d-none", !isTarget);
+            section.classList.toggle("active", isTarget);
         });
-        sections[index].classList.remove("d-none", "opacity-0");
-        sections[index].classList.add("d-block", "opacity-1", "active");
+
         current = index;
-        window.scrollTo({ top: 0, behavior: "smooth" }); // <-- Ajout pour revenir en haut
-    }
 
-    if (sections.length === 0) return;
+        const targetId = sections[current].id || "";
+        if (targetId) {
+            setActiveNav(targetId);
 
-    showSection(current);
-
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => {
-            if (current < sections.length - 1) {
-                showSection(current + 1);
+            if (updateHash) {
+                history.replaceState(null, "", `#${targetId}`);
             }
-        });
+        }
+
+        updateButtons();
+
+        if (scrollTop) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     }
 
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => {
-            if (current > 0) {
-                showSection(current - 1);
-            }
-        });
+    function findIndexByHash(hash) {
+        const id = (hash || "").replace("#", "");
+        if (!id) return -1;
+        return sections.findIndex((s) => s.id === id);
     }
 
-    // Navigation via la navbar
-    navLinks.forEach((link, idx) => {
+    function closeMobileNavbarIfOpen() {
+        const navbarCollapse = document.querySelector(".navbar-collapse.show");
+        if (!navbarCollapse) return;
+
+        if (window.bootstrap && window.bootstrap.Collapse) {
+            const bsCollapse = window.bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+            bsCollapse.hide();
+        } else {
+            navbarCollapse.classList.remove("show");
+        }
+    }
+
+    const initialIndex = findIndexByHash(window.location.hash);
+    showSection(initialIndex !== -1 ? initialIndex : 0, { updateHash: initialIndex !== -1 });
+
+    nextBtn?.addEventListener("click", () => showSection(current + 1));
+    prevBtn?.addEventListener("click", () => showSection(current - 1));
+
+    navLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
-            const href = link.getAttribute("href");
-            if (href && href.startsWith("#")) {
-                e.preventDefault();
-                // Trouve l'index de la section correspondante
-                const targetId = href.replace("#", "");
-                const targetIndex = Array.from(sections).findIndex(
-                    section => section.id === targetId
-                );
-                if (targetIndex !== -1) {
-                    showSection(targetIndex);
-                }
-                // Ferme le menu mobile si besoin
-                const navbarCollapse = document.querySelector('.navbar-collapse.show');
-                if (navbarCollapse) {
-                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-                    bsCollapse.hide();
-                }
-            }
+            const href = link.getAttribute("href") || "";
+            if (!href.startsWith("#")) return;
+
+            e.preventDefault();
+
+            const targetIndex = findIndexByHash(href);
+            if (targetIndex !== -1) showSection(targetIndex);
+
+            closeMobileNavbarIfOpen();
         });
+    });
+
+    window.addEventListener("hashchange", () => {
+        const idx = findIndexByHash(window.location.hash);
+        if (idx !== -1) showSection(idx, { updateHash: false });
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") showSection(current + 1);
+        if (e.key === "ArrowLeft") showSection(current - 1);
     });
 });

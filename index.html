@@ -2,30 +2,34 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Portfolio Clémence Boitelle – Développeuse web & applications</title>
 
     <!-- SEO -->
     <meta name="description"
-        content="Bienvenue sur le portfolio de Clémence Boitelle, développeuse d'applications web passionnée. Découvrez ses projets en Java, PHP, Symfony, HTML, CSS, JavaScript et bien plus.">
-    <meta name="keywords" content="Clémence Boitelle, Portfolio, Développeuse, Applications, Java, PHP, Symfony">
+        content="Bienvenue sur le portfolio de Clémence Boitelle, développeuse d'applications web passionnée. Projets Java, PHP/Symfony, HTML, CSS, JavaScript et plus.">
+    <meta name="keywords"
+        content="Clémence Boitelle, Portfolio, Développeuse, Applications, Java, PHP, Symfony, HTML, CSS, JavaScript">
     <meta name="author" content="Clémence Boitelle">
     <meta name="google-site-verification" content="KhvriqMfETcp6rh2o8M4tsiCJVTD8HdqhVENyGuFZTw" />
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://clemence95.github.io/">
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://clemence95.github.io/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Clémence Boitelle - Portfolio">
-    <meta property="og:description" content="Portfolio de Clémence Boitelle, Développeuse d'applications.">
+    <meta property="og:title" content="Clémence Boitelle – Portfolio">
+    <meta property="og:description" content="Portfolio de Clémence Boitelle, développeuse d'applications.">
     <meta property="og:image" content="https://clemence95.github.io/assets/images/clemence_avatar.webp">
     <meta property="og:url" content="https://clemence95.github.io/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio Clémence Boitelle">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Clémence Boitelle - Portfolio">
-    <meta name="twitter:description" content="Portfolio de Clémence Boitelle, Développeuse d'applications.">
+    <meta name="twitter:title" content="Clémence Boitelle – Portfolio">
+    <meta name="twitter:description" content="Portfolio de Clémence Boitelle, développeuse d'applications.">
     <meta name="twitter:image" content="https://clemence95.github.io/assets/images/clemence_avatar.webp">
 
     <!-- Favicon -->
@@ -37,104 +41,122 @@
     <!-- Thème navigateur -->
     <meta name="theme-color" content="#0d6efd">
 
-    <!-- Feuilles de style -->
     <!-- Préconnecter aux origines externes -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Charger directement les styles critiques -->
+    <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Feuilles de style non essentielles -->
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    </noscript>
-
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Politique CSP sécurisée -->
+    <!-- JSON-LD (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Clémence Boitelle",
+      "jobTitle": "Développeuse d'applications",
+      "url": "https://clemence95.github.io/",
+      "image": "https://clemence95.github.io/assets/images/clemence_avatar.webp",
+      "sameAs": [
+        "https://www.linkedin.com/in/clemence-boitelle-8627172b6",
+        "https://github.com/clemence95"
+      ]
+    }
+    </script>
+
+    <!-- Politique CSP sécurisée (resserrée) -->
     <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
-    style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-    img-src 'self' data: https://clemence95.github.io;
-    connect-src 'self';
-    frame-src 'none';
-  ">
+        default-src 'self';
+        base-uri 'self';
+        object-src 'none';
+        script-src 'self' https://cdn.jsdelivr.net;
+        style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        img-src 'self' data: https://clemence95.github.io;
+        connect-src 'self';
+        frame-src 'none';
+        upgrade-insecure-requests;
+    ">
 </head>
 
 <body class="pb-100">
+
+    <!-- Skip link (accessibilité clavier) -->
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-body border" href="#main">
+        Aller au contenu
+    </a>
 
     <!-- NAVBAR FIXE EN HAUT -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Navigation principale">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir / fermer la navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav" role="menu">
-                <ul class="navbar-nav d-flex justify-content-center w-100">
-                    <li class="nav-item"><a class="nav-link mx-2" href="#about" role="menuitem">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#skills" role="menuitem">Compétences</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#soft-skills" role="menuitem">Savoir-être</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#projects" role="menuitem">Projets</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#contact" role="menuitem">Contact</a></li>
 
+            <!-- (Bootstrap gère déjà très bien l’accessibilité, on évite role="menu") -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav d-flex justify-content-center w-100">
+                    <li class="nav-item"><a class="nav-link mx-2" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#skills">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#soft-skills">Savoir-être</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- SECTIONS EN SLIDER -->
-    <main class="container-fluid px-0 mb-5">
+    <main id="main" class="container-fluid px-0 mb-5">
+
+        <!-- ABOUT -->
         <section id="about" class="section active py-3 d-flex align-items-center justify-content-center text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
 
-                        <!-- Avatar -->
+                        <!-- Avatar (au-dessus de la ligne de flottaison => pas lazy) -->
                         <img src="assets/images/clemence_avatar.webp" alt="Portrait de Clémence Boitelle"
                             class="rounded-circle shadow mb-4 img-fluid mt-5 animate__animated animate__fadeInDown"
-                            width="200" height="200" loading="lazy">
+                            width="200" height="200" fetchpriority="high" decoding="async">
 
                         <!-- Nom et titre -->
                         <h1 class="fw-bold text-primary animate__animated animate__fadeInDown animate__delay-1s">
-                            Clémence Boitelle</h1>
+                            Clémence Boitelle
+                        </h1>
                         <h2 class="mb-4 text-rose-violet animate__animated animate__fadeInDown animate__delay-2s">
-                            Développeuse d'applications</h2>
+                            Développeuse d'applications
+                        </h2>
 
                         <!-- Présentation -->
-                        <p class="lead text-body mb-4 animate__animated animate__fadeInLeft">
-                            Mon parcours reflète une volonté constante d’apprendre et de contribuer à un avenir où la
-                            technologie est au service de l’humain.
-                            Après une première carrière en relation client, j’ai entrepris une reconversion passionnée
-                            pour devenir
-                            <span class="fw-semibold text-primary">Conceptrice Développeuse d’Applications</span>.
-                        </p>
                         <p class="lead text-body mb-4 animate__animated animate__fadeInRight">
-                            Je poursuis aujourd’hui mon évolution en visant une alternance pour un
-                            <span class="text-info fw-semibold">Master MIAGE</span> ou une
-                            <span class="text-success fw-semibold">Licence Professionnelle Réseaux</span>.
-                            Mon objectif : créer des solutions utiles, durables et accessibles.
+                            Actuellement étudiante en <span class="text-info fw-semibold">Master MIAGE</span> (Systèmes
+                            d’Information & Gestion de projet),
+                            je me forme au développement d’applications web modernes en utilisant
+                            <span class="fw-semibold">C# / .NET</span> côté backend et
+                            <span class="fw-semibold">React / TypeScript</span> côté frontend.
+                            Je recherche un <span class="text-success fw-semibold">stage de 20 semaines (≈ 5
+                                mois)</span> pour contribuer à un projet concret,
+                            gagner en expérience et intégrer une équipe dynamique.
                         </p>
 
+
                         <!-- Bouton CV -->
-                        <a href="assets/CV_2025-10-08_CLEMENCE_BOITELLE.pdf" class="btn btn-primary mb-4"
-                            target="_blank">
+                        <a href="assets/CV_2026-02-03_CLEMENCE_BOITELLE.pdf" class="btn btn-primary mb-4"
+                            target="_blank" rel="noopener">
                             <i class="fas fa-file-download me-2"></i> Télécharger mon CV
                         </a>
                     </div>
                 </div>
+
                 <!-- Citation du jour intégrée -->
                 <div class="fade-in bg-beige-quote" id="quote-section">
                     <h3 class="mb-3 text-body">Citation du jour</h3>
@@ -144,131 +166,166 @@
                             <span id="author" class="text-rose-violet"></span>
                         </footer>
                     </blockquote>
-                    <button class="btn btn-outline-primary mt-3" id="new-quote-btn">Nouvelle citation</button>
+                    <button class="btn btn-outline-primary mt-3" id="new-quote-btn" type="button">
+                        Nouvelle citation
+                    </button>
                 </div>
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section id="skills" class="section container py-5 d-none">
             <h2 class="text-center text-body-emphasis mb-5 mt-5">Compétences Techniques</h2>
             <p class="text-center mb-4 text-body">
-                Voici les compétences que j’ai développées à travers mes projets, ma formation de développeuse
-                d'applications et mes expériences. J’aime apprendre en continu et adapter mes outils aux
-                besoins des projets.
+                Compétences développées en Master MIAGE (UPJV), en formation CDA (AFPA) et à travers mes projets et
+                stages.
+                Je m’appuie sur des bases solides et j’apprends rapidement de nouvelles technos selon les besoins.
             </p>
 
             <!-- Boutons de filtre par domaine -->
             <div class="text-center mb-4">
-                <button class="btn btn-outline-info m-1 filter-btn" data-category="all">Tout</button>
-                <button class="btn btn-outline-warning m-1 filter-btn" data-category="langages">Langages</button>
-                <button class="btn btn-outline-success m-1 filter-btn" data-category="bdd">Bases de données</button>
-                <button class="btn btn-outline-primary m-1 filter-btn" data-category="outils">Outils</button>
-                <button class="btn btn-outline-secondary m-1 filter-btn" data-category="methodes">Méthodologies</button>
-                <button class="btn btn-outline-danger m-1 filter-btn" data-category="securite">Sécurité</button>
+                <button class="btn btn-outline-info m-1 filter-btn" data-category="all" type="button">Tout</button>
+                <button class="btn btn-outline-warning m-1 filter-btn" data-category="langages"
+                    type="button">Langages</button>
+                <button class="btn btn-outline-success m-1 filter-btn" data-category="bdd" type="button">Bases de
+                    données</button>
+                <button class="btn btn-outline-primary m-1 filter-btn" data-category="outils"
+                    type="button">Outils</button>
+                <button class="btn btn-outline-secondary m-1 filter-btn" data-category="methodes"
+                    type="button">Méthodologies</button>
+                <button class="btn btn-outline-danger m-1 filter-btn" data-category="securite"
+                    type="button">Sécurité</button>
             </div>
 
             <div class="row g-4 row-cols-1 row-cols-md-2">
+
+                <!-- Langages & Frameworks -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="langages">
                     <h4 class="text-primary fw-bold">Langages & Frameworks</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
                             <i class="fas fa-code me-2 text-primary"></i>
-                            PHP (<strong>Symfony</strong>), Java (<strong>JavaFX</strong>), JavaScript (ES6+), Python
-                            <span class="badge bg-secondary">Notions</span>, HTML5, CSS3, Bootstrap
+                            <strong>Langages :</strong> C#, Java, PHP, JavaScript, HTML5, CSS3, SQL, Bash
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-layer-group me-2 text-primary"></i>
+                            <strong>Frameworks / libs :</strong> .NET <span class="badge bg-secondary">en cours</span>,
+                            React,
+                            Symfony, JavaFX, Bootstrap
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-terminal me-2 text-primary"></i>
+                            <strong>Autres :</strong> Python <span class="badge bg-secondary">notions</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Bases de données -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="bdd">
                     <h4 class="text-success fw-bold">Bases de données</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
                             <i class="fas fa-database me-2 text-success"></i>
-                            MySQL, MariaDB (via phpMyAdmin), PostgreSQL <span class="badge bg-secondary">Notions</span>
+                            MySQL, MariaDB (phpMyAdmin)
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-project-diagram me-2 text-success"></i>
-                            Modélisation UML et Merise (MCD / MLD)
+                            <i class="fas fa-table me-2 text-success"></i>
+                            Conception & requêtes SQL, modélisation (UML / Merise : MCD / MLD)
                         </li>
                     </ul>
                 </div>
 
+                <!-- Outils -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="outils">
                     <h4 class="text-primary fw-bold">Environnements & outils</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-tools me-2 text-primary"></i>
-                            VS Code, Git / GitHub, WAMP
+                            <i class="fas fa-laptop-code me-2 text-primary"></i>
+                            VS Code, Rider
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fab fa-docker me-2 text-primary"></i>
-                            Docker <span class="badge bg-secondary">Notions</span>, WSL
+                            <i class="fab fa-git-alt me-2 text-primary"></i>
+                            Git, GitHub
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-network-wired me-2 text-primary"></i>
-                            Trello, phpMyAdmin
+                            <i class="fas fa-tasks me-2 text-primary"></i>
+                            Trello
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-pen-nib me-2 text-primary"></i>
+                            Canva, Figma
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-database me-2 text-primary"></i>
+                            FileMaker <span class="badge bg-secondary">notions</span>
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-file-excel me-2 text-primary"></i>
+                            Pack Office
                         </li>
                     </ul>
                 </div>
 
+                <!-- Méthodologies -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="methodes">
                     <h4 class="text-secondary fw-bold">Méthodologies & gestion</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
                             <i class="fas fa-sitemap me-2 text-secondary"></i>
-                            Méthode Agile (Scrum & Kanban <span class="badge bg-secondary">Notions</span>)
+                            Gestion de projet (MIAGE) : organisation, suivi, documentation
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-tasks me-2 text-secondary"></i>
-                            Suivi de cahier des charges, organisation de projet
+                            <i class="fas fa-people-group me-2 text-secondary"></i>
+                            Travail en équipe, livrables, communication
+                        </li>
+                        <li class="list-group-item bg-body text-body border-0">
+                            <i class="fas fa-rotate me-2 text-secondary"></i>
+                            Agile (Scrum / Kanban) <span class="badge bg-secondary">notions</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Sécurité -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="securite">
-                    <h4 class="text-danger fw-bold">Documentation & sécurité</h4>
+                    <h4 class="text-danger fw-bold">Sécurité</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-file-alt me-2 text-danger"></i>
-                            Rédaction technique, structuration de projet, veille
+                            <i class="fas fa-shield-alt me-2 text-danger"></i>
+                            JWT (authentification via token), bonnes pratiques (mots de passe / rôles / accès)
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-shield-alt me-2 text-danger"></i>
-                            Sécurité : JWT (authentification via token), Symfony utilise l'algorithme
-                            <abbr
-                                title="Paramètre 'auto' dans Symfony : choisit le meilleur algo disponible comme Argon2id ou Bcrypt">auto</abbr>
-                            pour le hachage des mots de passe (Bcrypt ou Argon2id selon le serveur), conformité RGPD
+                            <i class="fas fa-lock me-2 text-danger"></i>
+                            RGPD : sensibilisation et respect des données personnelles
                         </li>
                     </ul>
                 </div>
 
+                <!-- Tests -->
                 <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
                     data-category="outils">
-                    <h4 class="text-info fw-bold">Tests & automatisation</h4>
+                    <h4 class="text-info fw-bold">Tests & qualité</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
                         <li class="list-group-item bg-body text-body border-0">
                             <i class="fas fa-vial me-2 text-info"></i>
-                            PHPUnit – Tests unitaires
+                            Tests unitaires : PHPUnit
                         </li>
                         <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-cogs me-2 text-info"></i>
-                            Automatisation de processus avec scripts personnalisés
-                        </li>
-                        <li class="list-group-item bg-body text-body border-0">
-                            <i class="fas fa-robot me-2 text-info"></i>
-                            ChatGPT – Assistance IA pour le développement et la gestion
+                            <i class="fas fa-file-lines me-2 text-info"></i>
+                            Documentation technique, structuration de projet
                         </li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- Section Soft Skills -->
+
+        <!-- SOFT SKILLS -->
         <section id="soft-skills" class="section py-5 bg-light">
             <div class="container">
                 <h2 class="text-center text-body-emphasis mb-5 mt-5">Savoir-être</h2>
@@ -313,6 +370,7 @@
             </div>
         </section>
 
+        <!-- PROJECTS -->
         <section id="projects" class="section container py-5 d-none">
             <h2 class="text-center animate__animated animate__fadeInDown mb-5 mt-5">Projets</h2>
             <div class="row gy-5 row-cols-1 row-cols-md-2">
@@ -322,8 +380,10 @@
                     <div class="card shadow-sm mb-3">
                         <div class="card-body">
                             <h3 class="card-title text-primary">GestionCommerciale</h3>
-                            <p class="card-text">Développement d'une application Java consommant les API du projet
-                                Symfony "VillageGreen".</p>
+                            <p class="card-text">
+                                Développement d'une application Java consommant les API du projet Symfony
+                                "VillageGreen".
+                            </p>
                         </div>
                     </div>
                     <ul class="timeline">
@@ -345,9 +405,10 @@
                         </div>
                     </div>
                     <ul class="timeline">
-                        <li><strong>Dictionnaire de données :</strong> structuration BDD <a
-                                href="https://github.com/clemence95/new_villagegreen/blob/main/docs/dictionnaire-de-donnees.md"
-                                target="_blank">[voir]</a></li>
+                        <li><strong>Dictionnaire de données :</strong> structuration BDD
+                            <a href="https://github.com/clemence95/new_villagegreen/blob/main/docs/dictionnaire-de-donnees.md"
+                                target="_blank" rel="noopener">[voir]</a>
+                        </li>
                         <li><strong>Diagrammes UML</strong> pour modéliser les entités</li>
                         <li><strong>Maquettage UX/UI</strong> basé sur les besoins</li>
                         <li><strong>Frontend :</strong> HTML/CSS/JS, gestion panier et commandes</li>
@@ -364,18 +425,18 @@
                         </div>
                     </div>
                     <ul class="timeline">
-                        <li><strong>Compatibilité :</strong> Windows (.exe), Mac (.app/.dmg), Linux (.sh/.py)</li>
+                        <li><strong>Compatibilité :</strong> Windows (.exe)</li>
                         <li><strong>Utilisation :</strong> <code>python snake.py</code> (nécessite Python installé)</li>
                         <li class="d-flex flex-column flex-md-row gap-2 align-items-center">
                             <a href="https://github.com/clemence95/Snake_game" class="btn btn-primary btn-sm mb-0"
-                                target="_blank">Voir le code</a>
+                                target="_blank" rel="noopener">Voir le code</a>
                             <a href="https://github.com/clemence95/Snake_game/releases/download/v1.0/snake_game.zip"
                                 class="btn btn-secondary btn-sm mb-0" download>Télécharger le ZIP</a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Nouveau projet : Inventaire Yu-Gi-Oh -->
+                <!-- Inventaire Yu-Gi-Oh -->
                 <div class="col-md-6 animate__animated animate__fadeInUp">
                     <div class="card shadow-sm mb-3 border-warning">
                         <div class="card-body">
@@ -390,16 +451,18 @@
                         <li><strong>Fonctionnalités :</strong> Ajout, recherche, filtrage et affichage des cartes.</li>
                         <li><strong>Technos :</strong> HTML, CSS, JavaScript, Netlify</li>
                         <li>
-                            <a href="https://inventaire-yugioh.netlify.app/" class="btn btn-outline-warning btn-sm mb-0" target="_blank" rel="noopener">
+                            <a href="https://inventaire-yugioh.netlify.app/" class="btn btn-outline-warning btn-sm mb-0"
+                                target="_blank" rel="noopener">
                                 Voir l'application en ligne
                             </a>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- Section Contact -->
+        <!-- CONTACT -->
         <section id="contact" class="section container mt-5 mb-5 d-none py-5">
             <h2 class="text-center">Contactez-moi</h2>
 
@@ -415,27 +478,31 @@
                 <div class="mb-3">
                     <label for="name" class="form-label">Nom</label>
                     <input type="text" id="name" name="name" class="form-control" autocomplete="name"
-                        placeholder="Entrez votre nom" aria-describedby="name-error">
+                        placeholder="Entrez votre nom" aria-describedby="name-error" required>
                     <div id="name-error" class="text-danger"></div>
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" name="email" class="form-control" autocomplete="email"
-                        placeholder="Entrez votre email" aria-describedby="email-error">
+                        placeholder="Entrez votre email" aria-describedby="email-error" required>
                     <div id="email-error" class="text-danger"></div>
                 </div>
+
                 <div class="mb-3">
                     <label for="phone" class="form-label">Téléphone</label>
                     <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel"
                         placeholder="Entrez votre numéro de téléphone" aria-describedby="phone-error">
                     <div id="phone-error" class="text-danger"></div>
                 </div>
+
                 <div class="mb-3">
                     <label for="message" class="form-label">Message</label>
                     <textarea id="message" name="message" class="form-control" rows="4" autocomplete="off"
-                        placeholder="Entrez votre message" aria-describedby="message-error"></textarea>
+                        placeholder="Entrez votre message" aria-describedby="message-error" required></textarea>
                     <div id="message-error" class="text-danger"></div>
                 </div>
+
                 <div class="mb-3">
                     <button id="submitBtn" type="submit" class="btn btn-primary">Envoyer</button>
                 </div>
@@ -444,14 +511,17 @@
                 <div id="form-message" class="alert d-none" role="alert" aria-live="polite"></div>
             </form>
         </section>
+
     </main>
 
     <!-- BOUTONS DE NAVIGATION ENTRE SECTIONS (juste après </main>) -->
     <div id="section-navigation" class="text-center mb-2">
-        <button id="prev-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section précédente">
+        <button id="prev-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section précédente"
+            type="button">
             <i class="fas fa-arrow-left"></i>
         </button>
-        <button id="next-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section suivante">
+        <button id="next-section" class="btn btn-outline-primary rounded-circle mx-2" aria-label="Section suivante"
+            type="button">
             <i class="fas fa-arrow-right"></i>
         </button>
     </div>
@@ -460,16 +530,19 @@
     <footer class="text-center py-3 shadow fixed-bottom">
         <div class="container">
             <div class="col-12">
-                <p class="mb-2 small text-white">&copy; 2025 Clémence Boitelle</p>
+                <p class="mb-2 small text-white">&copy; <span id="year"></span> Clémence Boitelle</p>
+
                 <div class="d-flex justify-content-center gap-3">
                     <a href="https://www.linkedin.com/in/clemence-boitelle-8627172b6" target="_blank" rel="noopener"
                         aria-label="LinkedIn" class="text-link">
                         <i class="fab fa-linkedin fa-lg"></i>
                     </a>
+
                     <a href="https://github.com/clemence95" target="_blank" rel="noopener" aria-label="GitHub"
                         class="text-link">
                         <i class="fab fa-github fa-lg"></i>
                     </a>
+
                     <a href="https://ko-fi.com/F2F51FDY4I" target="_blank" rel="noopener"
                         class="d-flex align-items-center text-link text-decoration-none" aria-label="Ko-fi">
                         <i class="fas fa-coffee fa-lg me-1"></i>
@@ -480,19 +553,17 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS JS -->
+    <!-- SCRIPTS JS (locaux) -->
     <script src="assets/js/section-navigation.js" defer></script>
     <script src="assets/js/quote-loader.js" defer></script>
     <script src="assets/js/competence-filter.js" defer></script>
     <script src="assets/js/contact-validation.js" defer></script>
     <script src="assets/js/form-status-handler.js" defer></script>
-    <!-- Bootstrap 5.3.3 JS et Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
-        defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
-        integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"
-        defer></script>
+    <script src="assets/js/year.js" defer></script>
+
+    <!-- Bootstrap Bundle (inclut Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </body>
 
 </html>

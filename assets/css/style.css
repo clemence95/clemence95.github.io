@@ -1,124 +1,134 @@
-/* Palette personnalisée */
 :root {
-  --main-bg: #e3f0ff; /* bleu clair */
+  --main-bg: #e3f0ff;
+  /* bleu clair */
   --main-text: #2d3559;
   --accent: #ffb347;
   --accent2: #4fd1c5;
   --footer-bg: #23243a;
   --footer-link: #ffb347;
   --footer-link-hover: #fff;
+
+  --footer-height: 64px;
+  --nav-offset: 18px;
 }
 
-/* Fond général */
 body {
   background: var(--main-bg);
   color: var(--main-text);
-  overflow-x: hidden; /* Empêche la scrollbar horizontale lors des animations de zoom */
+  overflow-x: hidden;
 }
 
-/* Forcer la couleur claire sur tous les textes Bootstrap */
-body, .text-body, .lead, .blockquote, .blockquote-footer, .text-body-secondary {
+.text-body,
+.lead,
+.blockquote,
+.blockquote-footer,
+.text-body-secondary {
   color: var(--main-text) !important;
-  background: transparent !important; /* <-- Ajouté pour enlever tout fond */
 }
 
-/* Titres principaux bien visibles */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: var(--accent) !important;
 }
 
-/* Liens principaux */
-a, .text-link {
+a,
+.text-link {
   color: var(--accent2);
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
-a:hover, .text-link:hover {
+
+a:hover,
+.text-link:hover {
   color: var(--accent);
 }
 
-/* Footer personnalisé */
-footer {
-  background: var(--footer-bg) !important;
-  color: var(--main-text) !important;
+main {
+  padding-bottom: calc(var(--footer-height) + 24px);
 }
-footer a, footer .text-info, footer .text-primary {
+
+footer.fixed-bottom {
+  background: var(--footer-bg) !important;
+}
+
+footer,
+footer * {
   color: var(--footer-link) !important;
 }
-footer a:hover, footer .text-info:hover, footer .text-primary:hover {
+
+footer a:hover,
+footer .text-link:hover {
   color: var(--footer-link-hover) !important;
 }
 
-/* Boutons de navigation personnalisés */
+.navbar.bg-dark,
+.navbar.fixed-top {
+  background-color: var(--footer-bg) !important;
+}
+
+#quote-section h3 {
+  color: var(--accent2);
+}
+
+#quote-section blockquote {
+  color: var(--main-text);
+  border-left: 4px solid var(--accent2);
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 1rem;
+}
+
+.text-rose-violet {
+  color: #d72660 !important;
+}
+
+.bg-beige-quote {
+  background: #f8f4e3;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.animate__animated {
+  --animate-duration: 1.2s;
+}
+
+#section-navigation {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--footer-height) + var(--nav-offset));
+  transform: translateX(-50%);
+  z-index: 1055;
+  display: flex;
+  gap: 16px;
+  padding: 0 10px;
+  background: transparent;
+}
+
 #section-navigation button {
   background: var(--main-bg);
   border: 2px solid var(--accent2);
   color: var(--accent2);
 }
+
 #section-navigation button:hover {
   background: var(--accent2);
   color: var(--main-bg);
 }
 
-/* Citation du jour */
-#quote-section h3 {
-  color: var(--accent2);
-}
-#quote-section blockquote {
-  color: var(--main-text);
-  border-left: 4px solid var(--accent2);
-  background: rgba(255,255,255,0.03);
-  padding-left: 1rem;
-}
-
-/* Classe personnalisée pour un rose-violet vif */
-.text-rose-violet {
-  color: #d72660 !important; /* rose-violet vif */
-}
-
-/* Fond beige pour la citation du jour */
-.bg-beige-quote {
-  background: #f8f4e3;
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Optionnel : pour ajuster la durée globale des animations Animate.css */
-.animate__animated {
-  --animate-duration: 1.2s;
-}
-
-/* Ajoute dans style.css */
-main { padding-bottom: 90px; }
-
-/* Pour que les flèches restent toujours visibles et bien positionnées sur mobile */
-#section-navigation {
-  position: fixed;
-  left: 50%;
-  bottom: 90px;
-  transform: translateX(-50%);
-  z-index: 1055;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 0;
-  background: transparent;
-  pointer-events: auto;
-  /* Ajout pour la responsivité */
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
 @media (max-width: 575.98px) {
+  :root {
+    --footer-height: 76px;
+  }
+
   #section-navigation {
-    gap: 8px;
-    bottom: 110px; /* remonte un peu pour éviter le footer sur mobile */
-    left: 50%;
+    gap: 10px;
     width: 100vw;
     max-width: 100vw;
+    justify-content: center;
   }
+
   #section-navigation button {
     min-width: 44px;
     min-height: 44px;
@@ -127,84 +137,18 @@ main { padding-bottom: 90px; }
   }
 }
 
-/* Améliorations et simplifications possibles : */
-
-/* 1. Supprime les doublons et conflits sur overflow des rows */
-#skills .row.g-4,
-#soft-skills .row.g-4 {
-  /* Choisis soit overflow: hidden, soit visible, mais pas les deux */
-  overflow: visible;
-  position: relative;
-  margin-left: -12px;
-  margin-right: -12px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-/* 2. Unifie la règle de zoom pour éviter les conflits */
-#skills .row.g-4 .skill-card:hover,
-#soft-skills .row.g-4 .card:hover {
-  transform: scale(1.012);
-  box-shadow: 0 0 16px 0 var(--accent2);
-  z-index: 2;
-  cursor: default;
-}
-
-/* 3. Sur mobile, désactive le zoom proprement */
-@media (max-width: 991.98px) {
-  #skills .row.g-4 .skill-card:hover,
-  #soft-skills .row.g-4 .card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    cursor: default !important;
-  }
-  #skills .row.g-4,
-  #soft-skills .row.g-4 {
-    margin-left: -6px;
-    margin-right: -6px;
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  #skills .row.g-4 > [class^="col-"],
-  #soft-skills .row.g-4 > [class^="col-"] {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-/* 4. Pour éviter les conflits, retire les anciennes règles de zoom plus haut dans le fichier :
-   - Supprime les autres .skill-card:hover et .card:hover qui font scale(1.03) ou scale(1.01)
-   - Garde une seule version cohérente */
-
-/* 5. Pour la responsivité, tu peux ajouter : */
-@media (max-width: 575.98px) {
-  .skill-card, #soft-skills .card {
-    margin-bottom: 1rem;
-  }
-}
-
-/* 6. Pour la performance, tu peux regrouper will-change et contain sur les cartes */
-.skill-card,
-#soft-skills .card {
-  will-change: transform;
-  contain: layout paint;
-}
-
-/* Correction visibilité texte bouton actif (btn-primary) sur fond btn-outline-* */
-.filter-btn.btn-primary {
-  color: #fff !important;
-}
-
 .timeline {
   padding-left: 1rem;
   border-left: 3px solid #dee2e6;
   margin-left: 1rem;
   list-style: none;
 }
+
 .timeline li {
   position: relative;
   margin-bottom: 1rem;
 }
+
 .timeline li::before {
   content: "";
   position: absolute;
@@ -216,62 +160,39 @@ main { padding-bottom: 90px; }
   border-radius: 50%;
 }
 
-/* Navbar même couleur que le footer */
-.navbar.bg-dark,
-.navbar.fixed-top {
-  background-color: var(--footer-bg) !important;
-}
-
-/* Améliore la responsivité des containers */
-.container, .container-fluid {
-  overflow-x: auto;
-  box-sizing: border-box;
-}
-
-/* Pour les éléments animés par zoom/scale */
-.zoom-effect,
 .skill-card,
+#soft-skills .card,
 .card {
   will-change: transform;
-  contain: layout;
 }
 
-/* Empêche la scrollbar verticale lors des animations de zoom sur les skills */
-#skills .row.g-4,
-#soft-skills .row.g-4 {
-  overflow: hidden;
-  position: relative;
-}
-
-/* Limite le zoom pour rester dans le parent (skills) */
-.skill-card {
+#soft-skills .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   transform-origin: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  will-change: transform;
-  contain: layout paint;
-  max-width: 100%;
-  overflow: hidden;
 }
 
-#skills .row.g-4 .skill-card:hover,
-#soft-skills .row.g-4 .card:hover {
-  transform: scale(1.03); /* Zoom plus doux */
+#soft-skills .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 16px 0 var(--accent2);
   z-index: 2;
 }
 
-/* Empêche le débordement visuel sur mobile */
 @media (max-width: 991.98px) {
-  #skills .row.g-4 .skill-card:hover,
-  #soft-skills .row.g-4 .card:hover {
-    transform: scale(1.01);
+  #soft-skills .card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
-/* Désactive le zoom et le contour vert sur Compétences Techniques */
-#skills .row.g-4 .skill-card,
-#skills .row.g-4 .skill-card:hover {
+#skills .skill-card,
+#skills .skill-card:hover {
   transform: none !important;
   box-shadow: none !important;
   border: none !important;
   cursor: default !important;
+}
+
+.container,
+.container-fluid {
+  overflow-x: visible;
 }
