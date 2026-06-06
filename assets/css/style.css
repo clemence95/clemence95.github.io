@@ -49,7 +49,9 @@ a:hover,
 }
 
 main {
-  padding-bottom: calc(var(--footer-height) + 24px);
+  /* Réserve la place du footer fixe ET des flèches de navigation flottantes,
+     pour qu'aucun contenu ne reste caché derrière eux (surtout sur mobile). */
+  padding-bottom: calc(var(--footer-height) + var(--nav-offset) + 72px);
 }
 
 footer.fixed-bottom {
@@ -108,9 +110,11 @@ footer .text-link:hover {
   justify-content: center;
   gap: 16px;
 
-  padding: 0 16px;
+  padding: 20px 16px 6px;
   box-sizing: border-box;
-  background: transparent;
+  /* Dégradé vers la couleur de fond : le texte qui défile s'estompe
+     proprement sous les flèches au lieu de transparaître autour. */
+  background: linear-gradient(to top, var(--main-bg) 55%, transparent);
 }
 
 #section-navigation button {
