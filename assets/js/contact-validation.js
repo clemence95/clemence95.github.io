@@ -92,10 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener("input", () => {
             const value = input.value.trim();
             const hasForbiddenChars = /[<>]/.test(value);
+            const isOptional = id === "phone"; // le téléphone n'est pas obligatoire
 
             if (!value) {
-                errorElement.textContent = emptyMessage;
-                input.classList.add("is-invalid");
+                // Champ vide : erreur seulement si le champ est obligatoire
+                errorElement.textContent = isOptional ? "" : emptyMessage;
+                input.classList.toggle("is-invalid", !isOptional);
             } else if (hasForbiddenChars) {
                 errorElement.textContent = errorMessages.specialChars;
                 input.classList.add("is-invalid");
@@ -138,13 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // Validation améliorée pour le champ téléphone
+        // Validation améliorée pour le champ téléphone (optionnel : valide uniquement si renseigné)
         const phoneErrorElement = document.getElementById("phone-error");
         const cleanedPhone = phone.replace(/[^0-9]/g, "");
         if (!phone) {
-            phoneErrorElement.textContent = emptyFieldMessages.phone;
-            document.getElementById("phone").classList.add("is-invalid");
-            isValid = false;
+            // Champ laissé vide : autorisé puisque le téléphone est facultatif
+            phoneErrorElement.textContent = "";
+            document.getElementById("phone").classList.remove("is-invalid");
         } else if (!regexPatterns.phone.test(phone)) {
             phoneErrorElement.textContent = errorMessages.phone;
             document.getElementById("phone").classList.add("is-invalid");

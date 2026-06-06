@@ -26,12 +26,15 @@ body {
   color: var(--main-text) !important;
 }
 
+/* Couleur d'accent par défaut pour les titres SANS classe de couleur Bootstrap.
+   Sans !important, les utilitaires (.text-primary, .text-body-emphasis, etc.)
+   gardent la priorité — comportement voulu. */
 h1,
 h2,
 h3,
 h4,
 h5 {
-  color: var(--accent) !important;
+  color: var(--accent);
 }
 
 a,
@@ -207,4 +210,46 @@ footer .text-link:hover {
 
 body.page-loaded #section-navigation {
   opacity: 1;
+}
+
+/* ============================================================
+   MODE SOMBRE
+   On redéfinit les variables personnalisées : tout ce qui
+   s'appuie sur var(--main-bg) / var(--main-text) suit automatiquement.
+   ============================================================ */
+[data-bs-theme="dark"] {
+  --main-bg: #1a1d2e;
+  --main-text: #e6e8f0;
+}
+
+/* Transition douce lors du changement de thème */
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Encadré "Citation du jour" (fond beige en clair) */
+[data-bs-theme="dark"] .bg-beige-quote {
+  background: #24273d;
+}
+
+/* Section "Savoir-être" qui utilise .bg-light */
+[data-bs-theme="dark"] .bg-light {
+  background-color: #15172a !important;
+  color: var(--main-text);
+}
+
+/* Ligne verticale des timelines de projets */
+[data-bs-theme="dark"] .timeline {
+  border-left-color: #3a3f5c;
+}
+
+/* Rose-violet un peu plus lumineux pour rester lisible sur fond sombre */
+[data-bs-theme="dark"] .text-rose-violet {
+  color: #ff5c8a !important;
+}
+
+/* Bouton de bascule de thème : zone cliquable confortable */
+#theme-toggle {
+  width: 38px;
+  height: 38px;
 }

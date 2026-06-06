@@ -7,6 +7,9 @@
 
     <title>Portfolio Clémence Boitelle – Développeuse web & applications</title>
 
+    <!-- Thème clair/sombre : appliqué avant le rendu pour éviter le flash -->
+    <script src="assets/js/theme-init.js"></script>
+
     <!-- SEO -->
     <meta name="description"
         content="Bienvenue sur le portfolio de Clémence Boitelle, développeuse d'applications web passionnée. Projets Java, PHP/Symfony, HTML, CSS, JavaScript et plus.">
@@ -96,10 +99,20 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Navigation principale">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir / fermer la navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+            <div class="d-flex align-items-center order-lg-last">
+                <!-- Bascule clair / sombre -->
+                <button id="theme-toggle" type="button"
+                    class="btn btn-outline-light btn-sm rounded-circle me-2 d-flex align-items-center justify-content-center"
+                    aria-label="Activer le thème sombre" aria-pressed="false">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir / fermer la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
             <!-- (Bootstrap gère déjà très bien l’accessibilité, on évite role="menu") -->
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -197,10 +210,10 @@
                     type="button">Sécurité</button>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2">
+            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
 
                 <!-- Langages & Frameworks -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="langages">
                     <h4 class="text-primary fw-bold">Langages & Frameworks</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -222,7 +235,7 @@
                 </div>
 
                 <!-- Bases de données -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="bdd">
                     <h4 class="text-success fw-bold">Bases de données</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -238,7 +251,7 @@
                 </div>
 
                 <!-- Outils -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="outils">
                     <h4 class="text-primary fw-bold">Environnements & outils</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -270,7 +283,7 @@
                 </div>
 
                 <!-- Méthodologies -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="methodes">
                     <h4 class="text-secondary fw-bold">Méthodologies & gestion</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -290,7 +303,7 @@
                 </div>
 
                 <!-- Sécurité -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="securite">
                     <h4 class="text-danger fw-bold">Sécurité</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -306,7 +319,7 @@
                 </div>
 
                 <!-- Tests -->
-                <div class="col-6 col-md-4 animate__animated animate__zoomIn skill-card filter-item"
+                <div class="animate__animated animate__zoomIn skill-card filter-item"
                     data-category="outils">
                     <h4 class="text-info fw-bold">Tests & qualité</h4>
                     <ul class="list-group list-group-flush shadow-sm rounded-2 border border-secondary-subtle">
@@ -490,7 +503,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Téléphone</label>
+                    <label for="phone" class="form-label">Téléphone <span class="text-body-secondary">(facultatif)</span></label>
                     <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel"
                         placeholder="Entrez votre numéro de téléphone" aria-describedby="phone-error">
                     <div id="phone-error" class="text-danger"></div>
@@ -554,6 +567,7 @@
     </footer>
 
     <!-- SCRIPTS JS (locaux) -->
+    <script src="assets/js/theme-toggle.js" defer></script>
     <script src="assets/js/section-navigation.js" defer></script>
     <script src="assets/js/quote-loader.js" defer></script>
     <script src="assets/js/competence-filter.js" defer></script>
