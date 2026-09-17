@@ -128,17 +128,6 @@ footer .text-link:hover {
   color: var(--main-bg);
 }
 
-/* Bandeau de recherche d'alternance */
-.alternance-banner {
-  border-radius: 2rem;
-  font-weight: 500;
-  max-width: 100%;
-}
-
-.alternance-banner .fa-briefcase {
-  font-size: 1.1rem;
-}
-
 @media (max-width: 575.98px) {
   :root {
     --footer-height: 76px;
