@@ -84,6 +84,11 @@ footer .text-link:hover {
   padding-left: 1rem;
 }
 
+/* Bootstrap préfixe l'auteur d'un tiret cadratin : on ne le veut pas. */
+.blockquote-footer::before {
+  content: "";
+}
+
 .text-rose-violet {
   color: #d72660 !important;
 }
